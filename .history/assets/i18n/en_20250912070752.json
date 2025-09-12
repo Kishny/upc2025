@@ -1,0 +1,114 @@
+{
+  "topbar_msg": "Presidential election — October 2025",
+  "contact": "Contact",
+
+  "nav_about": "About",
+  "nav_candidate": "Consensus Candidate",
+  "nav_program": "Program",
+  "nav_docs": "Official Documents",
+  "nav_campaign": "People’s Campaign",
+  "nav_join": "Join",
+  "nav_news_media": "News / Media",
+
+  "hero_title": "Union for Change — 2025",
+  "hero_subtitle": "Mobilize. Unite. Win.",
+  "cta_join": "Join now",
+  "cta_program": "Download the program",
+  "cta_candidate": "Discover the candidate",
+
+  "candidat_title": "The Consensus Candidate",
+  "candidat_intro": "Discover the vision, journey and commitment of the consensus candidate chosen by the people.",
+  "btn_read_more": "Learn more →",
+
+  "candidate_values_title": "Vision & Commitments",
+  "candidate_values_text": "Peace, democratic reforms, inclusive growth, human development and Cameroon’s international standing.",
+  "cta_read_program": "Read the program",
+
+  "doc_program": "UPC 2025 — Common Program",
+  "about_text": "Broad civic and political coalition committed to peaceful alternation in 2025.",
+  "about_point_1": "Unite forces for change",
+  "about_point_2": "Present a consensus candidate",
+  "about_point_3": "Monitor and defend the vote",
+
+  "axis_1_title": "Peace & Cohesion",
+  "axis_1_text": "National reconciliation and lasting stability.",
+  "axis_2_title": "Political reforms",
+  "axis_2_text": "Strong institutions, rule of law, independent justice.",
+  "axis_3_title": "Economic growth",
+  "axis_3_text": "Jobs, entrepreneurship, infrastructure.",
+  "axis_4_title": "Human development",
+  "axis_4_text": "Education, health, social protection.",
+  "axis_5_title": "International standing",
+  "axis_5_text": "Active diplomacy and regional integration.",
+
+  "call_action": "Act locally",
+  "call_action_text": "Join an existing committee or create your own to mobilize for peaceful alternation in 2025.",
+  "cta_create_committee": "Create a committee",
+
+  "footer_home": "Home",
+  "footer_about": "About",
+  "footer_program": "Program",
+  "footer_docs": "Documents",
+  "footer_campaign": "Campaign",
+  "footer_news": "News / Media",
+  "footer_contact": "Contact",
+  "footer_joinus": "JOIN US",
+  "rights": "All rights reserved."
+}
+
+{
+  "topbar_msg": "Presidential election — October 2025",
+  "contact": "Contact",
+
+  "nav_about": "About",
+  "nav_candidate": "Consensus Candidate",
+  "nav_program": "Program",
+  "nav_docs": "Official Documents",
+  "nav_campaign": "People’s Campaign",
+  "nav_join": "Join",
+  "nav_news_media": "News / Media",
+
+  "about_title": "About UPC 2025",
+
+  "about_who_title": "Who are we?",
+  "about_who_p1": "Union for Change 2025 (UPC 2025) is a broad coalition of political parties, civil society organizations, public figures and citizens uniting around a Common Program for Transition and Refoundation and presenting a Consensus People’s Candidate for the October 2025 presidential election.",
+  "about_who_p2": "Union for Change is not a disparate lineup of candidates approved by the Constitutional Council with divergent agendas; it is a People’s Coalition open to all citizens and organizations — including those whose candidates were unfairly excluded — with one goal: win the 2025 presidential election and refound Cameroon over a 3–5 year transition.",
+
+  "about_roots_title": "Historical roots",
+  "about_roots_p1": "UPC 2025 draws from the 1992 Union for Change which carried the (contested) victory of coalition candidate Ni John Fru Ndi. Since then, several federating initiatives have emerged: Front des Forces Alternatives (FFA), Stand Up for Cameroon (SUFC), Cadre Citoyen de Concertation (C3), Alliance pour la Transition et la Refondation (ATR), etc.",
+  "about_roots_p2": "Learning from past experiences, the “Douala Group” — led by Anicet Ekane, Djeukam Tchameni and Sam Mbaka — structured a people’s call to pool the forces of change, resulting in a Common Program for Transition and Refoundation and a transparent process to choose a Consensus People’s Candidate.",
+
+  "about_goals_title": "Our objectives",
+  "about_goals_1_p1": "Unite all forces for change around a Common Program for Transition and Refoundation.",
+  "about_goals_2_p1": "Present a ",
+  "about_goals_2_strong": "Consensus People’s Candidate",
+  "about_goals_2_p2": " for the 2025 presidential election.",
+  "about_goals_3_p1": "Run a ",
+  "about_goals_3_strong": "popular and participatory campaign",
+  "about_goals_4_p1": "Ensure ",
+  "about_goals_4_strong": "presence and monitoring",
+  "about_goals_4_p2": " in all polling stations.",
+  "about_goals_5_p1": "Win the election and ",
+  "about_goals_5_strong": "defend the people’s victory",
+  "about_source_note": "Excerpt from “Section 1: About”.",
+
+  "about_org_title": "Organizational structure",
+  "about_org_p1": "Union for Change 2025 is first and foremost an initiative of the Cameroonian people. Individuals, political parties and civil society organizations can join. The structure is light and highly decentralized: people lead the campaign.",
+  "about_org_p2": "The basic unit is the conscious citizen who registers (online or in person), promotes the Common Program, joins the grassroots campaign for the Consensus Candidate, votes and protects their vote — hence the slogan: “On 12 October 2025, it all depends on me.”",
+  "about_org_p3": "In each municipality, citizens form Local Committees (online or via the headquarters). The local committee conducts door-to-door outreach, organizes meetings, encourages turnout and vote protection, and records polling-station results in the parallel tally system.",
+
+  "about_principles_title": "Principles of the Common Program",
+  "about_pr_1": "Rule of law, independent justice, fundamental freedoms.",
+  "about_pr_2": "Transparency, anti-corruption, state audit.",
+  "about_pr_3": "Effective decentralization and local governance.",
+  "about_pr_4": "Inclusive economic recovery and job creation.",
+  "about_pr_5": "Social investment: education, health, national cohesion.",
+
+  "about_cta_title": "Want to help?",
+  "about_cta_text": "Join a local committee or create your own.",
+
+  "cta_join": "Join",
+  "cta_create_committee": "Create a committee",
+
+  "rights": "All rights reserved."
+}

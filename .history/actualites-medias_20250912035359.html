@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="page_media_title">Actualités / Médias — UPC 2025</title>
+    <meta
+      name="description"
+      content="Articles, communiqués, galerie photo/vidéo et réseaux sociaux de l'Union Pour le Changement 2025."
+      data-i18n="page_media_desc"
+    />
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button
+            id="langToggle"
+            class="btn btn--ghost"
+            aria-label="Toggle language"
+          >
+            FR / EN
+          </button>
+          <a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="UPC 2025" class="brand__logo" />
+          <span class="brand__title">UPC 2025</span>
+        </a>
+
+        <nav id="nav" class="nav" aria-label="Navigation principale">
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a>
+          <a href="candidat.html" data-i18n="nav_candidate"
+            >Candidat consensuel</a
+          >
+          <a href="programme.html" data-i18n="nav_program">Programme</a>
+          <a href="documents-officiels.html" data-i18n="nav_docs">Documents</a>
+          <a href="campagne-populaire.html" data-i18n="nav_campaign"
+            >Campagne populaire</a
+          >
+          <a href="adherer.html" class="nav__cta" data-i18n="nav_join"
+            >Adhérer</a
+          >
+          <a
+            href="actualites-medias.html"
+            class="active"
+            data-i18n="nav_news_media"
+            >Actualités / Médias</a
+          >
+        </nav>
+
+        <button id="burger" class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero compact -->
+    <section class="hero hero--compact">
+      <div class="hero__content container">
+        <h1 class="hero__title" data-i18n="media_title">Actualités / Médias</h1>
+        <p class="hero__subtitle" data-i18n="news_subtitle">
+          Articles, communiqués, photos, vidéos & réseaux sociaux.
+        </p>
+        <div class="hero__cta">
+          <a href="index.html" class="btn btn--outline" data-i18n="back_home"
+            >Retour à l’accueil</a
+          >
+          <a href="#reseaux" class="btn btn--primary" data-i18n="goto_socials"
+            >Voir nos réseaux</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Articles -->
+      <section class="section section--inset">
+        <div class="container">
+          <h2 class="section__title" data-i18n="news_title">Actualités</h2>
+
+          <div class="cards cards--news">
+            <article class="card news">
+              <h3 data-i18n="news_1_title">Annonce du meeting national</h3>
+              <p class="muted" data-i18n="news_1_meta">
+                13 sept. 2025 • Yaoundé
+              </p>
+              <p data-i18n="news_1_excerpt">
+                Présentation du candidat consensuel et mobilisation des comités
+                à l’échelle nationale.
+              </p>
+            </article>
+
+            <article class="card news">
+              <h3 data-i18n="news_2_title">Ouverture des adhésions</h3>
+              <p class="muted" data-i18n="news_2_meta">10 sept. 2025</p>
+              <p data-i18n="news_2_excerpt">
+                Rejoignez la coalition : individuels et organisations peuvent
+                s’inscrire dès aujourd’hui.
+              </p>
+            </article>
+
+            <article class="card news">
+              <h3 data-i18n="news_3_title">Appel à volontaires</h3>
+              <p class="muted" data-i18n="news_3_meta">05 sept. 2025</p>
+              <p data-i18n="news_3_excerpt">
+                Mobilisation, communication, contrôle du vote — participez selon
+                vos compétences.
+              </p>
+              <a
+                href="adherer.html#benevolat"
+                class="btn btn--outline"
+                data-i18n="read_more"
+                >Lire</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Communiqués de presse -->
+      <section class="section section--alt section--inset">
+        <div class="container">
+          <h2 class="section__title" data-i18n="press_title">
+            Communiqués de presse
+          </h2>
+
+          <div class="cards cards--press">
+            <!-- Card 1 : Communiqué -->
+            <article class="card doc">
+              <div class="doc__icon doc__icon--megaphone" aria-hidden="true">
+                <!-- Megaphone -->
+                <svg viewBox="0 0 24 24" class="ico">
+                  <path
+                    d="M19.5 4.5a1.5 1.5 0 0 1 1.5 1.5v12a1.5 1.5 0 0 1-2.32 1.27l-5.6-3.5H9.75v2.5a2.75 2.75 0 1 1-5.5 0v-4.5a2.75 2.75 0 0 1 5.5 0v.5h3.33l5.6-3.5a1.5 1.5 0 0 1 .82-.25ZM8.5 13.25a1.25 1.25 0 0 0-2.5 0v4.5a1.25 1.25 0 1 0 2.5 0v-4.5ZM19.5 6.4l-6.55 4.1v3l6.55 4.1V6.4Z"
+                  />
+                </svg>
+              </div>
+              <div class="doc__body">
+                <h3 data-i18n="press_1_title">
+                  Communiqué — Lancement officiel de la campagne
+                </h3>
+                <p data-i18n="press_1_excerpt">
+                  Déclaration officielle et éléments de langage pour la presse.
+                </p>
+              </div>
+              <a
+                class="btn btn--outline disabled"
+                data-i18n="btn_pdf"
+                style="pointer-events: none; opacity: 0.6; cursor: not-allowed"
+              >
+                PDF
+              </a>
+            </article>
+
+            <!-- Card 2 : Accréditations -->
+            <article class="card doc">
+              <div class="doc__icon doc__icon--badge" aria-hidden="true">
+                <!-- ID badge -->
+                <svg viewBox="0 0 24 24" class="ico">
+                  <path
+                    d="M9 3.5A1.5 1.5 0 0 1 10.5 2h3A1.5 1.5 0 0 1 15 3.5V5h3.5A1.5 1.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11A1.5 1.5 0 0 1 5.5 5H9V3.5Zm1.5.5v1h3v-1h-3ZM6 8.5a.5.5 0 0 0-.5.5v8.5c0 .55.45 1 1 1h11a1 1 0 0 0 1-1V9a.5.5 0 0 0-.5-.5H6Zm6 2.25A2.25 2.25 0 1 1 9.75 13 2.25 2.25 0 0 1 12 10.75Zm-4.25 6.25a3.75 3.75 0 0 1 7.5 0H7.75Zm8.75-7.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1 0-1.5h2.5Z"
+                  />
+                </svg>
+              </div>
+              <div class="doc__body">
+                <h3 data-i18n="press_2_title">
+                  Note aux médias — Accréditations
+                </h3>
+                <p data-i18n="press_2_excerpt">
+                  Procédure d’accréditation et contacts presse.
+                </p>
+              </div>
+              <a
+                class="btn btn--outline disabled"
+                data-i18n="btn_pdf"
+                style="pointer-events: none; opacity: 0.6; cursor: not-allowed"
+              >
+                PDF
+              </a>
+            </article>
+
+            <!-- Card 3 : Dossier -->
+            <article class="card doc">
+              <div class="doc__icon doc__icon--folder" aria-hidden="true">
+                <!-- Folder -->
+                <svg viewBox="0 0 24 24" class="ico">
+                  <path
+                    d="M10.2 5.5 12 7h7.5A2.5 2.5 0 0 1 22 9.5v7A2.5 2.5 0 0 1 19.5 19h-15A2.5 2.5 0 0 1 2 16.5v-9A2.5 2.5 0 0 1 4.5 5h4.2ZM4.5 6.5a1 1 0 0 0-1 1V9h17V9.5a1 1 0 0 0-1-1H11.4l-1.8-2H4.5Zm15 11a1 1 0 0 0 1-1V10.5h-17V16.5a1 1 0 0 0 1 1h15Z"
+                  />
+                </svg>
+              </div>
+              <div class="doc__body">
+                <h3 data-i18n="press_3_title">Dossier de presse</h3>
+                <p data-i18n="press_3_excerpt">
+                  Présentation synthétique, biographie, visuels et logos.
+                </p>
+              </div>
+              <a
+                class="btn btn--outline disabled"
+                data-i18n="btn_pdf"
+                style="pointer-events: none; opacity: 0.6; cursor: not-allowed"
+              >
+                PDF
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galerie -->
+      <section class="section section--inset">
+        <div class="container">
+          <h2 class="section__title" data-i18n="gallery_title">Galerie</h2>
+
+          <!-- Images -->
+          <div class="gallery gallery--wide" aria-label="Galerie">
+            <img
+              src="assets/img/hero-1.jpg"
+              alt="Meeting de présentation"
+              loading="lazy"
+            />
+            <img
+              src="assets/img/hero-2.jpg"
+              alt="Mobilisation des comités"
+              loading="lazy"
+            />
+            <img src="assets/img/logo.png" alt="Logo UPC 2025" loading="lazy" />
+          </div>
+
+          <!-- Vidéos externes -->
+
+          <!-- Nouvelle sous-section Meeting vidéo -->
+          <h3 class="section__subtitle" data-i18n="meeting_video_title">
+            Vidéo du meeting
+          </h3>
+          <div class="card video-card">
+            <video
+              id="meetingVideo"
+              class="video-meeting"
+              autoplay
+              muted
+              loop
+              playsinline
+            >
+              <source src="assets/img/video.MP4" type="video/mp4" />
+              Votre navigateur ne supporte pas la vidéo HTML5.
+            </video>
+
+            <!-- Bouton volume -->
+            <button
+              id="volumeToggle"
+              class="volume-btn"
+              aria-label="Activer/Désactiver le son"
+            >
+              <!-- Icône mute -->
+              <svg
+                id="iconMute"
+                xmlns="http://www.w3.org/2000/svg"
+                class="ico"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M3 10v4h4l5 5V5L7 10H3z" />
+              </svg>
+              <!-- Icône volume ON -->
+              <svg
+                id="iconSound"
+                xmlns="http://www.w3.org/2000/svg"
+                class="ico hidden"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M3 10v4h4l5 5V5L7 10H3zm9.5 2c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Réseaux sociaux -->
+      <section id="reseaux" class="section section--alt section--inset">
+        <div class="container">
+          <h2 class="section__title" data-i18n="socials_title">
+            Réseaux sociaux
+          </h2>
+          <p class="muted" data-i18n="socials_subtitle">
+            Suivez les annonces, live et contenus exclusifs sur nos canaux
+            officiels.
+          </p>
+
+          <ul class="footer__socials socials--center">
+            <li>
+              <a
+                class="sbtn"
+                href="https://facebook.com/"
+                target="_blank"
+                aria-label="Facebook"
+                title="Facebook"
+              >
+                f
+              </a>
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://twitter.com/"
+                target="_blank"
+                aria-label="X/Twitter"
+                title="X / Twitter"
+              >
+                X
+              </a>
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://instagram.com/"
+                target="_blank"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                ◎
+              </a>
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://t.me/"
+                target="_blank"
+                aria-label="Telegram"
+                title="Telegram"
+              >
+                ✈
+              </a>
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://tiktok.com/"
+                target="_blank"
+                aria-label="TikTok"
+                title="TikTok"
+              >
+                ♫
+              </a>
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://youtube.com/"
+                target="_blank"
+                aria-label="YouTube"
+                title="YouTube"
+              >
+                ▶
+              </a>
+            </li>
+            <!-- WhatsApp -->
+            <li>
+              <a
+                class="sbtn"
+                href="https://wa.me/237XXXXXXXX"
+                target="_blank"
+                aria-label="WhatsApp"
+                title="WhatsApp"
+              >
+                <svg
+                  class="ico"
+                  viewBox="0 0 32 32"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M16 .4A15.6 15.6 0 0 0 .4 16c0 2.8.7 5.6 2.1 8l-1.4 5.2 5.4-1.4A15.3 15.3 0 0 0 16 31.6 15.6 15.6 0 1 0 16 .4Zm0 28.6c-2.5 0-4.9-.6-7.1-1.9l-.5-.2-3.2.9.9-3.1-.2-.6A12.6 12.6 0 1 1 28.6 16c0 7-5.6 13-12.6 13Zm7-9.7c-.4-.2-2.5-1.2-2.9-1.3-.4-.2-.6-.2-.9.2-.3.4-1.1 1.3-1.4 1.6-.2.2-.5.3-.9.1-2.5-1-4.5-3-5.2-5.5-.1-.4 0-.7.2-.9.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.9-2.2-1.3-3-.3-.7-.6-.6-.9-.6h-.8c-.2 0-.7.1-1.1.5s-1.5 1.5-1.5 3.7c0 2.2 1.5 4.3 1.7 4.6.2.2 3 4.8 7.3 6.5.9.4 1.6.7 2.2.9 1 .3 1.9.3 2.6.2.8-.1 2.5-1 2.9-1.9.4-.9.4-1.8.3-2-.1-.2-.4-.3-.8-.5Z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Navigation -->
+    <section class="section nav-cta">
+      <div class="container hero__cta">
+        <a href="index.html" class="btn btn--outline" data-i18n="back_home">
+          ← Retour à l’accueil
+        </a>
+        <a
+          href="contact.html"
+          class="btn btn--primary"
+          data-i18n="goto_contact"
+        >
+          Contact →
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer--clean">
+      <div class="container footer__wrap">
+        <img src="assets/img/logo.png" alt="UPC 2025" class="footer__logo" />
+
+        <div class="footer__titleline">
+          <span class="footer__line"></span>
+          <h3 class="footer__title" data-i18n="footer_join">REJOIGNEZ-NOUS</h3>
+          <span class="footer__line"></span>
+        </div>
+
+        <ul class="footer__socials">
+          <li>
+            <a class="sbtn" href="#" aria-label="Facebook" title="Facebook"
+              ><span aria-hidden="true">f</span></a
+            >
+          </li>
+          <li>
+            <a class="sbtn" href="#" aria-label="X / Twitter" title="X"
+              ><span aria-hidden="true">X</span></a
+            >
+          </li>
+          <li>
+            <a class="sbtn" href="#" aria-label="Instagram" title="Instagram"
+              ><span aria-hidden="true">◎</span></a
+            >
+          </li>
+          <li>
+            <a class="sbtn" href="#" aria-label="YouTube" title="YouTube"
+              ><span aria-hidden="true">▶</span></a
+            >
+          </li>
+        </ul>
+
+        <nav class="footer__nav">
+          <a href="index.html" data-i18n="nav_home">Accueil</a>
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a>
+          <a href="programme.html" data-i18n="nav_program">Programme</a>
+          <a href="documents-officiels.html" data-i18n="nav_docs">Documents</a>
+          <a href="campagne-populaire.html" data-i18n="nav_campaign"
+            >Campagne</a
+          >
+          <a href="actualites-medias.html" data-i18n="nav_news_media"
+            >Actualités / Médias</a
+          >
+          <a href="contact.html" data-i18n="contact">Contact</a>
+        </nav>
+
+        <small class="footer__copy">
+          © <span id="year"></span> UPC 2025 —
+          <span data-i18n="rights">Tous droits réservés.</span>
+        </small>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

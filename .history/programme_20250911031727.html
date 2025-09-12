@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Programme — UPC 2025</title>
+    <meta
+      name="description"
+      content="Programme Commun de Transition et de Refondation : Paix, Réformes politiques, Croissance économique, Développement humain, Rayonnement international."
+    />
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+    <meta property="og:title" content="Programme — UPC 2025" />
+    <meta
+      property="og:description"
+      content="Les cinq axes stratégiques du Programme Commun."
+    />
+    <meta property="og:image" content="assets/img/hero-1.jpg" />
+    <meta name="theme-color" content="#007A5E" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button
+            id="langToggle"
+            class="btn btn--ghost"
+            aria-label="Toggle language"
+          >
+            FR / EN
+          </button>
+          <a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="UPC 2025" class="brand__logo" />
+          <span class="brand__title">UPC 2025</span>
+        </a>
+        <nav id="nav" class="nav" aria-label="Navigation principale">
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a>
+          <a href="programme.html" class="active" data-i18n="nav_program"
+            >Programme</a
+          >
+          <a href="documents-officiels.html" data-i18n="nav_docs"
+            >Documents officiels</a
+          >
+          <a href="campagne-populaire.html" data-i18n="nav_campaign"
+            >Campagne populaire</a
+          >
+          <a href="participez.html" class="nav__cta" data-i18n="nav_join"
+            >Participez</a
+          >
+          <a href="actualites-medias.html" data-i18n="nav_news_media"
+            >Actualités / Médias</a
+          >
+          <a href="contact.html" data-i18n="contact">Contact</a>
+        </nav>
+        <button id="burger" class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- En-tête de page -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-i18n="prog_title">Programme Commun</h1>
+        <p class="page-hero__lead" data-i18n="prog_lead">
+          Les cinq axes stratégiques pour la Transition et la Refondation.
+        </p>
+        <div class="hero__cta">
+          <!-- Remplace le chemin par le vrai PDF si besoin -->
+          <a
+            href="docs/Programme_Commun_UPC2025.pdf"
+            class="btn btn--primary"
+            target="_blank"
+            rel="noopener"
+            data-i18n="prog_download"
+          >
+            Télécharger le Programme (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro + rappel téléchargements -->
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card gradient-cm">
+          <h2 data-i18n="prog_intro_title">Une feuille de route claire</h2>
+          <p data-i18n="prog_intro_text">
+            Le Programme Commun définit les priorités immédiates pour sécuriser
+            la paix, refonder l’État et relancer l’économie, tout en
+            investissant dans l’humain et le rayonnement du Cameroun.
+          </p>
+          <ul class="checklist">
+            <li data-i18n="prog_intro_pt1">
+              Actions de transition réalistes et mesurables
+            </li>
+            <li data-i18n="prog_intro_pt2">
+              Gouvernance éthique et transparente
+            </li>
+            <li data-i18n="prog_intro_pt3">
+              Approche participative et inclusive
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 data-i18n="prog_dl_title">Documents liés</h3>
+          <p data-i18n="prog_dl_text">
+            Consultez aussi les autres documents officiels.
+          </p>
+          <div class="hero__cta">
+            <a
+              href="documents-officiels.html"
+              class="btn btn--outline"
+              data-i18n="prog_dl_btn"
+              >Tous les documents</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Les 5 axes -->
+    <section class="section section--alt" id="axes">
+      <div class="container">
+        <h2 data-i18n="prog_axes_title">Les cinq axes stratégiques</h2>
+
+        <div class="axes">
+          <!-- Axe 1 -->
+          <article class="axis card">
+            <div class="axis__tag axis__tag--green" data-i18n="axis_1_tag">
+              Axe 1
+            </div>
+            <h3 data-i18n="axis_1_title">Paix & Sécurité</h3>
+            <p data-i18n="axis_1_text">
+              Mettre fin aux conflits, restaurer la sécurité et la confiance
+              civique, assurer la réconciliation nationale et la protection des
+              citoyens.
+            </p>
+            <ul class="checklist">
+              <li data-i18n="axis_1_b1">Désescalade & médiations ciblées</li>
+              <li data-i18n="axis_1_b2">Professionnalisation des forces</li>
+              <li data-i18n="axis_1_b3">
+                Programme de réinsertion & justice transitionnelle
+              </li>
+            </ul>
+          </article>
+
+          <!-- Axe 2 -->
+          <article class="axis card">
+            <div class="axis__tag axis__tag--red" data-i18n="axis_2_tag">
+              Axe 2
+            </div>
+            <h3 data-i18n="axis_2_title">
+              Réformes politiques & institutionnelles
+            </h3>
+            <p data-i18n="axis_2_text">
+              État de droit, séparation des pouvoirs, réforme électorale,
+              décentralisation effective et lutte anticorruption.
+            </p>
+            <ul class="checklist">
+              <li data-i18n="axis_2_b1">
+                Refonte du cadre électoral & biométrie
+              </li>
+              <li data-i18n="axis_2_b2">Indépendance de la justice</li>
+              <li data-i18n="axis_2_b3">
+                Audit général de l’État & transparence
+              </li>
+            </ul>
+          </article>
+
+          <!-- Axe 3 -->
+          <article class="axis card">
+            <div class="axis__tag axis__tag--yellow" data-i18n="axis_3_tag">
+              Axe 3
+            </div>
+            <h3 data-i18n="axis_3_title">Croissance économique & emplois</h3>
+            <p data-i18n="axis_3_text">
+              Relance productive, climat des affaires, filières locales,
+              infrastructures et soutien aux PME/PMI.
+            </p>
+            <ul class="checklist">
+              <li data-i18n="axis_3_b1">
+                Agriculture, agro-transformation, énergie
+              </li>
+              <li data-i18n="axis_3_b2">
+                Allègement fiscal ciblé & financement des PME
+              </li>
+              <li data-i18n="axis_3_b3">
+                Grandes infrastructures utiles & PPP
+              </li>
+            </ul>
+          </article>
+
+          <!-- Axe 4 -->
+          <article class="axis card">
+            <div class="axis__tag axis__tag--green" data-i18n="axis_4_tag">
+              Axe 4
+            </div>
+            <h3 data-i18n="axis_4_title">Développement humain</h3>
+            <p data-i18n="axis_4_text">
+              Investir dans l’éducation, la santé, la protection sociale,
+              l’égalité des chances et la cohésion nationale.
+            </p>
+            <ul class="checklist">
+              <li data-i18n="axis_4_b1">
+                École de qualité & formation professionnelle
+              </li>
+              <li data-i18n="axis_4_b2">
+                Couverture santé & hôpitaux modernisés
+              </li>
+              <li data-i18n="axis_4_b3">Programmes jeunesse & inclusion</li>
+            </ul>
+          </article>
+
+          <!-- Axe 5 -->
+          <article class="axis card">
+            <div class="axis__tag axis__tag--red" data-i18n="axis_5_tag">
+              Axe 5
+            </div>
+            <h3 data-i18n="axis_5_title">Rayonnement international</h3>
+            <p data-i18n="axis_5_text">
+              Diplomatie ouverte, intégration régionale, attractivité, diaspora
+              & leadership panafricain.
+            </p>
+            <ul class="checklist">
+              <li data-i18n="axis_5_b1">
+                Relance des partenariats stratégiques
+              </li>
+              <li data-i18n="axis_5_b2">Promotion export & tourisme</li>
+              <li data-i18n="axis_5_b3">
+                Diaspora : investissement & transferts de compétences
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation de page -->
+    <section class="section">
+      <div class="container hero__cta">
+        <a href="index.html" class="btn btn--outline" data-i18n="back_home"
+          >← Retour à l’accueil</a
+        >
+        <a
+          href="documents-officiels.html"
+          class="btn btn--primary"
+          data-i18n="see_docs"
+          >Voir les documents →</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer--solid">
+      <div class="container footer__inner">
+        <small
+          >© <span id="year"></span> UPC 2025 —
+          <span data-i18n="rights">Tous droits réservés.</span></small
+        >
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

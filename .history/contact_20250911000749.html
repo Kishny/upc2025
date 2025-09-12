@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="contact">Contact — UPC 2025</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+  </head>
+  <body>
+    <!-- Topbar + Header -->
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button id="langToggle" class="btn btn--ghost">FR / EN</button
+          ><a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container header__inner">
+        …
+        <nav id="nav" class="nav">…</nav>
+        …
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container grid-2">
+          <div>
+            <h1 data-i18n="contact_title">Contact</h1>
+            <p data-i18n="contact_text">
+              Une question ? Un média ? Un partenariat ?
+            </p>
+            <ul class="contact-list">
+              <li><strong>Email</strong> : coalitionupc2025@gmail.com</li>
+              <li>
+                <strong>Réseaux</strong> : Facebook, TikTok, Telegram, YouTube,
+                WhatsApp
+              </li>
+            </ul>
+          </div>
+          <form id="form-contact" class="card" novalidate>
+            <label
+              ><span data-i18n="field_subject">Sujet</span
+              ><input type="text" name="subject" required
+            /></label>
+            <label
+              ><span>Email</span><input type="email" name="email" required
+            /></label>
+            <label
+              ><span data-i18n="field_message">Message</span
+              ><textarea name="message" rows="4" required></textarea>
+            </label>
+            <button
+              class="btn btn--primary"
+              type="submit"
+              data-i18n="btn_send_msg"
+            >
+              Envoyer
+            </button>
+            <div class="form__alert" role="alert" hidden></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer--solid">
+      <div class="container footer__inner">…</div>
+    </footer>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

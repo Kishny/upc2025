@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="nav_docs">Documents — UPC 2025</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+  </head>
+  <body>
+    <!-- Topbar + Header -->
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button id="langToggle" class="btn btn--ghost">FR / EN</button
+          ><a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="brand"
+          ><img
+            src="assets/img/logo.png"
+            class="brand__logo"
+            alt="UPC 2025"
+          /><span class="brand__title">UPC 2025</span></a
+        >
+        <nav id="nav" class="nav">
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a
+          ><a href="candidat.html" data-i18n="nav_candidate">Candidat</a
+          ><a href="documents.html" class="active" data-i18n="nav_docs"
+            >Documents</a
+          ><a href="adhesion.html" class="nav__cta" data-i18n="nav_join"
+            >Adhérer</a
+          ><a href="actualites.html" data-i18n="nav_news">Actualités</a
+          ><a href="medias.html" data-i18n="nav_media">Médias</a>
+        </nav>
+        <button id="burger" class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <h1 data-i18n="docs_title">Documents officiels</h1>
+          <div class="cards">
+            <a class="card doc" href="docs/programme.pdf" target="_blank"
+              ><h3 data-i18n="doc_program">Programme Commun</h3>
+              <p data-i18n="doc_program_desc">
+                Les 6 chantiers prioritaires.
+              </p></a
+            >
+            <a class="card doc" href="docs/appel.pdf" target="_blank"
+              ><h3 data-i18n="doc_appeal">Appel à l’Union</h3>
+              <p data-i18n="doc_appeal_desc">
+                Texte d’adhésion à la coalition.
+              </p></a
+            >
+            <a
+              class="card doc"
+              href="docs/engagement-candidat.pdf"
+              target="_blank"
+              ><h3 data-i18n="doc_candidate">Engagement du candidat</h3>
+              <p data-i18n="doc_candidate_desc">
+                Principes de la candidature.
+              </p></a
+            >
+            <a
+              class="card doc"
+              href="docs/engagement-membre.pdf"
+              target="_blank"
+              ><h3 data-i18n="doc_member">Engagement du membre</h3>
+              <p data-i18n="doc_member_desc">Formulaire d’engagement.</p></a
+            >
+            <a class="card doc" href="docs/adhesion-org.pdf" target="_blank"
+              ><h3 data-i18n="doc_org">Fiche d’adhésion — Organisation</h3>
+              <p data-i18n="doc_org_desc">Télécharger le PDF.</p></a
+            >
+            <a class="card doc" href="docs/adhesion-pers.pdf" target="_blank"
+              ><h3 data-i18n="doc_personal">Fiche d’adhésion — Personnelle</h3>
+              <p data-i18n="doc_personal_desc">Télécharger le PDF.</p></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer--solid">
+      <div class="container footer__inner">…</div>
+    </footer>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

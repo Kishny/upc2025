@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="contact_page_title">Contact — UPC 2025</title>
+    <meta
+      name="description"
+      content="Formulaire de contact, coordonnées officielles et réseaux sociaux de l'Union Pour le Changement 2025."
+      data-i18n="contact_page_desc"
+    />
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button
+            id="langToggle"
+            class="btn btn--ghost"
+            aria-label="Toggle language"
+          >
+            FR / EN
+          </button>
+          <a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="UPC 2025" class="brand__logo" />
+          <span class="brand__title">UPC 2025</span>
+        </a>
+        <nav id="nav" class="nav" aria-label="Navigation principale">
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a>
+          <a href="programme.html" data-i18n="nav_program">Programme</a>
+          <a href="documents-officiels.html" data-i18n="nav_docs">Documents</a>
+          <a href="campagne-populaire.html" data-i18n="nav_campaign"
+            >Campagne populaire</a
+          >
+          <a href="participez.html" class="nav__cta" data-i18n="nav_join"
+            >Participez</a
+          >
+          <a href="actualites-medias.html" data-i18n="nav_news_media"
+            >Actualités / Médias</a
+          >
+        </nav>
+        <button id="burger" class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero compact -->
+    <section class="hero" style="min-height: clamp(180px, 32vh, 360px)">
+      <div class="hero__content container">
+        <h1 class="hero__title" data-i18n="contact_title">Contact</h1>
+        <p class="hero__subtitle" data-i18n="contact_subtitle">
+          Une question, un partenariat, la presse ? Écrivez-nous.
+        </p>
+        <div class="hero__cta">
+          <a href="index.html" class="btn btn--outline" data-i18n="back_home"
+            >← Retour à l’accueil</a
+          >
+          <a href="#form" class="btn btn--primary" data-i18n="goto_form"
+            >Aller au formulaire →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Coordonnées + Formulaire -->
+      <section class="section">
+        <div class="container grid-2">
+          <!-- Coordonnées officielles -->
+          <aside class="card gradient-cm">
+            <h2 style="margin-top: 0" data-i18n="contact_block_title">
+              Coordonnées officielles
+            </h2>
+            <p class="muted" data-i18n="contact_block_desc">
+              Vous pouvez nous joindre via le formulaire ou aux coordonnées
+              ci-dessous.
+            </p>
+
+            <ul class="checklist" style="margin-top: 10px">
+              <li>
+                <strong data-i18n="contact_email_label">Email :</strong>
+                <a href="mailto:contact@upc2025.org">contact@upc2025.org</a>
+              </li>
+              <li>
+                <strong data-i18n="contact_phone_label">Téléphone :</strong>
+                <a href="tel:+237000000000">+237 00 00 00 00</a>
+              </li>
+              <li>
+                <strong data-i18n="contact_addr_label">Adresse :</strong>
+                <span data-i18n="contact_addr_value"
+                  >Siège national, Yaoundé, Cameroun</span
+                >
+              </li>
+              <li>
+                <strong data-i18n="contact_hours_label">Horaires :</strong>
+                <span data-i18n="contact_hours_value">Lun – Ven, 9h–17h</span>
+              </li>
+            </ul>
+
+            <!-- Réseaux -->
+            <h3 style="margin: 18px 0 8px" data-i18n="socials_title">
+              Réseaux sociaux
+            </h3>
+            <ul class="footer__socials" style="justify-content: flex-start">
+              <li>
+                <a
+                  class="sbtn"
+                  href="https://facebook.com/"
+                  target="_blank"
+                  aria-label="Facebook"
+                  >f</a
+                >
+              </li>
+              <li>
+                <a
+                  class="sbtn"
+                  href="https://twitter.com/"
+                  target="_blank"
+                  aria-label="X/Twitter"
+                  >X</a
+                >
+              </li>
+              <li>
+                <a
+                  class="sbtn"
+                  href="https://instagram.com/"
+                  target="_blank"
+                  aria-label="Instagram"
+                  >◎</a
+                >
+              </li>
+              <li>
+                <a
+                  class="sbtn"
+                  href="https://t.me/"
+                  target="_blank"
+                  aria-label="Telegram"
+                  >✈</a
+                >
+              </li>
+              <li>
+                <a
+                  class="sbtn"
+                  href="https://tiktok.com/"
+                  target="_blank"
+                  aria-label="TikTok"
+                  >♫</a
+                >
+              </li>
+              <li>
+                <a
+                  class="sbtn"
+                  href="https://youtube.com/"
+                  target="_blank"
+                  aria-label="YouTube"
+                  >▶</a
+                >
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Formulaire -->
+          <section id="form" class="card">
+            <h2 style="margin-top: 0" data-i18n="contact_form_title">
+              Formulaire de contact
+            </h2>
+            <form id="form-contact" novalidate>
+              <label>
+                <span data-i18n="field_name">Nom & Prénoms</span>
+                <input type="text" name="name" required />
+              </label>
+
+              <label>
+                <span data-i18n="field_email">Email</span>
+                <input type="email" name="email" required />
+              </label>
+
+              <label>
+                <span data-i18n="field_phone">Téléphone / WhatsApp</span>
+                <input type="tel" name="phone" />
+              </label>
+
+              <label>
+                <span data-i18n="field_subject">Sujet</span>
+                <input type="text" name="subject" required />
+              </label>
+
+              <label>
+                <span data-i18n="field_message">Message</span>
+                <textarea name="message" rows="6" required></textarea>
+              </label>
+
+              <p class="form__small" data-i18n="privacy_note">
+                En envoyant, vous acceptez notre politique de confidentialité.
+              </p>
+
+              <div class="hero__cta" style="justify-content: flex-start">
+                <button
+                  type="submit"
+                  class="btn btn--primary"
+                  data-i18n="btn_send_msg"
+                >
+                  Envoyer
+                </button>
+                <a
+                  href="index.html"
+                  class="btn btn--outline"
+                  data-i18n="back_home"
+                  >← Retour à l’accueil</a
+                >
+              </div>
+
+              <div class="form__alert" hidden aria-live="polite"></div>
+            </form>
+          </section>
+        </div>
+      </section>
+
+      <!-- Navigation courte (cohérence) -->
+      <section class="section nav-cta">
+        <div class="container hero__cta">
+          <a href="index.html" class="btn btn--outline" data-i18n="back_home"
+            >← Retour à l’accueil</a
+          >
+          <a
+            href="participez.html"
+            class="btn btn--primary"
+            data-i18n="goto_participate"
+            >Participer →</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer propre -->
+    <footer class="footer footer--clean">
+      <div class="container footer__wrap">
+        <img src="assets/img/logo.png" alt="UPC 2025" class="footer__logo" />
+        <div class="footer__titleline">
+          <span class="footer__line"></span>
+          <h3 class="footer__title" data-i18n="footer_join">REJOIGNEZ-NOUS</h3>
+          <span class="footer__line"></span>
+        </div>
+
+        <ul class="footer__socials">
+          <li>
+            <a class="sbtn" href="#" aria-label="Facebook" title="Facebook"
+              >f</a
+            >
+          </li>
+          <li>
+            <a class="sbtn" href="#" aria-label="X / Twitter" title="X">X</a>
+          </li>
+          <li>
+            <a class="sbtn" href="#" aria-label="Instagram" title="Instagram"
+              >◎</a
+            >
+          </li>
+          <li>
+            <a class="sbtn" href="#" aria-label="YouTube" title="YouTube">▶</a>
+          </li>
+        </ul>
+
+        <nav class="footer__nav">
+          <a href="index.html" data-i18n="footer_home">Accueil</a>
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a>
+          <a href="programme.html" data-i18n="nav_program">Programme</a>
+          <a href="documents-officiels.html" data-i18n="nav_docs">Documents</a>
+          <a href="campagne-populaire.html" data-i18n="nav_campaign"
+            >Campagne</a
+          >
+          <a href="actualites-medias.html" data-i18n="nav_news_media"
+            >Actualités / Médias</a
+          >
+          <a href="contact.html" data-i18n="contact">Contact</a>
+        </nav>
+
+        <small class="footer__copy">
+          © <span id="year"></span> UPC 2025 —
+          <span data-i18n="rights">Tous droits réservés.</span>
+        </small>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

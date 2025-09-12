@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="nav_about">À propos — UPC 2025</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button id="langToggle" class="btn btn--ghost">FR / EN</button
+          ><a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="brand"
+          ><img
+            src="assets/img/logo.png"
+            alt="UPC 2025"
+            class="brand__logo"
+          /><span class="brand__title">UPC 2025</span></a
+        >
+        <nav id="nav" class="nav" aria-label="Navigation principale">
+          <a href="a-propos.html" class="active" data-i18n="nav_about"
+            >À propos</a
+          >
+          <a href="candidat.html" data-i18n="nav_candidate">Candidat</a>
+          <a href="documents.html" data-i18n="nav_docs">Documents</a>
+          <a href="adhesion.html" class="nav__cta" data-i18n="nav_join"
+            >Adhérer</a
+          >
+          <a href="actualites.html" data-i18n="nav_news">Actualités</a>
+          <a href="medias.html" data-i18n="nav_media">Médias</a>
+        </nav>
+        <button id="burger" class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container grid-2">
+          <div>
+            <h1 data-i18n="about_title">À propos de la Coalition</h1>
+            <p data-i18n="about_text">
+              Large coalition citoyenne et politique engagée...
+            </p>
+            <ul class="checklist">
+              <li data-i18n="about_point_1">
+                Fédérer les forces du changement
+              </li>
+              <li data-i18n="about_point_2">
+                Présenter un candidat consensuel
+              </li>
+              <li data-i18n="about_point_3">Surveiller et défendre le vote</li>
+            </ul>
+          </div>
+          <div class="card gradient-cm">
+            <h3 data-i18n="call_action">Agir près de chez vous</h3>
+            <p data-i18n="call_action_text">
+              Rejoignez ou créez un comité local.
+            </p>
+            <a
+              href="adhesion.html"
+              class="btn btn--secondary"
+              data-i18n="cta_create_committee"
+              >Créer un comité</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer--solid">
+      <div class="container footer__inner">
+        <small
+          >© <span id="year"></span> UPC 2025 —
+          <span data-i18n="rights">Tous droits réservés.</span></small
+        >
+        <nav class="footer__nav">
+          <a href="documents.html" data-i18n="footer_docs">Documents</a
+          ><a href="#" data-i18n="footer_legal">Mentions légales</a
+          ><a href="#" data-i18n="footer_privacy">Confidentialité</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

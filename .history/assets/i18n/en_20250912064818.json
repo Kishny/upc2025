@@ -1,0 +1,57 @@
+{
+  "topbar_msg": "Presidential election — October 2025",
+  "contact": "Contact",
+
+  "nav_about": "About",
+  "nav_candidate": "Consensus Candidate",
+  "nav_program": "Program",
+  "nav_docs": "Official Documents",
+  "nav_campaign": "People’s Campaign",
+  "nav_join": "Join",
+  "nav_news_media": "News / Media",
+
+  "hero_title": "Union for Change — 2025",
+  "hero_subtitle": "Mobilize. Unite. Win.",
+  "cta_join": "Join now",
+  "cta_program": "Download the program",
+  "cta_candidate": "Discover the candidate",
+
+  "candidat_title": "The Consensus Candidate",
+  "candidat_intro": "Discover the vision, journey and commitment of the consensus candidate chosen by the people.",
+  "btn_read_more": "Learn more →",
+
+  "candidate_values_title": "Vision & Commitments",
+  "candidate_values_text": "Peace, democratic reforms, inclusive growth, human development and Cameroon’s international standing.",
+  "cta_read_program": "Read the program",
+
+  "doc_program": "UPC 2025 — Common Program",
+  "about_text": "Broad civic and political coalition committed to peaceful alternation in 2025.",
+  "about_point_1": "Unite forces for change",
+  "about_point_2": "Present a consensus candidate",
+  "about_point_3": "Monitor and defend the vote",
+
+  "axis_1_title": "Peace & Cohesion",
+  "axis_1_text": "National reconciliation and lasting stability.",
+  "axis_2_title": "Political reforms",
+  "axis_2_text": "Strong institutions, rule of law, independent justice.",
+  "axis_3_title": "Economic growth",
+  "axis_3_text": "Jobs, entrepreneurship, infrastructure.",
+  "axis_4_title": "Human development",
+  "axis_4_text": "Education, health, social protection.",
+  "axis_5_title": "International standing",
+  "axis_5_text": "Active diplomacy and regional integration.",
+
+  "call_action": "Act locally",
+  "call_action_text": "Join an existing committee or create your own to mobilize for peaceful alternation in 2025.",
+  "cta_create_committee": "Create a committee",
+
+  "footer_home": "Home",
+  "footer_about": "About",
+  "footer_program": "Program",
+  "footer_docs": "Documents",
+  "footer_campaign": "Campaign",
+  "footer_news": "News / Media",
+  "footer_contact": "Contact",
+  "footer_joinus": "JOIN US",
+  "rights": "All rights reserved."
+}

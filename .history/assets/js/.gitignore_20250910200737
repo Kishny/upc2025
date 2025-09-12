@@ -1,0 +1,8 @@
+# Ignorer le backend pour le moment
+backend/
+
+# Fichiers macOS
+.DS_Store
+
+# Node_modules (si jamais tu ajoutes des paquets côté front)
+node_modules/

@@ -1,0 +1,447 @@
+{
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "hero_title": "Union Pour le Changement — 2025",
+  "hero_subtitle": "Mobiliser. Fédérer. Gagner.",
+  "cta_join": "Adhérer maintenant",
+  "cta_join_short": "Adhérer",
+  "cta_program": "Télécharger le programme",
+  "cta_candidate": "Découvrir le candidat",
+
+  "candidat_title": "Le Candidat Consensuel",
+  "candidat_intro": "Découvrez la vision, le parcours et l'engagement du candidat consensuel choisi par le peuple.",
+  "btn_read_more": "En savoir plus →",
+
+  "candidate_values_title": "Vision & engagements",
+  "candidate_values_text": "Paix, réformes démocratiques, croissance inclusive, développement humain et rayonnement international du Cameroun.",
+  "cta_read_program": "Lire le programme",
+
+  "doc_program": "UPC 2025 — Programme Commun",
+  "about_text": "Large coalition citoyenne et politique engagée pour l’alternance pacifique en 2025.",
+  "about_point_1": "Fédérer les forces du changement",
+  "about_point_2": "Présenter un candidat consensuel",
+  "about_point_3": "Surveiller et défendre le vote",
+
+  "axis_1_title": "Paix & Cohésion",
+  "axis_1_text": "Réconciliation nationale et stabilité durable.",
+  "axis_2_title": "Réformes politiques",
+  "axis_2_text": "Institutions solides, État de droit, justice indépendante.",
+  "axis_3_title": "Croissance économique",
+  "axis_3_text": "Emplois, entrepreneuriat, infrastructures.",
+  "axis_4_title": "Développement humain",
+  "axis_4_text": "Éducation, santé, protection sociale.",
+  "axis_5_title": "Rayonnement international",
+  "axis_5_text": "Diplomatie active et intégration régionale.",
+
+  "call_action": "Agir près de chez vous",
+  "call_action_text": "Rejoignez un comité existant ou créez le vôtre pour mobiliser autour de l’alternance pacifique en 2025.",
+  "cta_create_committee": "Créer un comité",
+
+  "about_title": "À propos de l’UPC 2025",
+  "about_who_title": "Qui sommes-nous ?",
+  "about_who_p1": "L’Union pour le Changement en 2025 (UPC 2025) est une large coalition de partis politiques, associations de la société civile, personnalités et simples citoyens qui entendent se fédérer autour d’un Programme Commun de Transition et de Refondation et présenter un Candidat Consensuel du Peuple pour l’élection présidentielle d’octobre 2025.",
+  "about_who_p2": "L’Union pour le Changement n’est pas un attelage disparate de candidats retenus par le Conseil Constitutionnel avec des agendas divergents ; c’est une Coalition du Peuple, ouverte à tous les citoyens et à toutes les organisations politiques et civiles — y compris celles dont les candidats ont été injustement exclus — avec un objectif commun : gagner la présidentielle 2025 et refonder le Cameroun pendant une période de transition de 3 à 5 ans.",
+
+  "about_roots_title": "Racines historiques",
+  "about_roots_p1": "L’UPC 2025 puise ses racines dans l’Union pour le Changement de 1992 qui avait porté la victoire (contestée) du candidat de la coalition Ni John Fru Ndi. Depuis, plusieurs initiatives de fédération ont vu le jour : Front des Forces Alternatives (FFA), Stand Up for Cameroon (SUFC), Cadre Citoyen de Concertation (C3), Alliance pour la Transition et la Refondation (ATR), etc.",
+  "about_roots_p2": "En tirant les leçons du passé, le « Groupe de Douala », sous la houlette d’Anicet Ekane, Djeukam Tchameni et Sam Mbaka, a structuré l’appel du peuple pour mutualiser les forces du changement, aboutissant à un Programme Commun de Transition et de Refondation et à un processus transparent de choix d’un Candidat Consensuel du Peuple.",
+
+  "about_goals_title": "Nos objectifs",
+  "about_goals_1_p1": "Fédérer toutes les forces du changement autour d’un Programme Commun de Transition et de Refondation.",
+  "about_goals_2_p1": "Présenter un ",
+  "about_goals_2_strong": "candidat consensuel du Peuple",
+  "about_goals_2_p2": " à la présidentielle 2025.",
+  "about_goals_3_p1": "Mener une ",
+  "about_goals_3_strong": "campagne populaire et participative",
+  "about_goals_4_p1": "Assurer la ",
+  "about_goals_4_strong": "présence et la surveillance",
+  "about_goals_4_p2": " dans tous les bureaux de vote.",
+  "about_goals_5_p1": "Gagner l’élection et ",
+  "about_goals_5_strong": "défendre la victoire du peuple",
+  "about_source_note": "Extrait du document « Section 1 : À propos ».",
+
+  "about_org_title": "Structure organisationnelle",
+  "about_org_p1": "L’Union pour le Changement en 2025 est avant tout une initiative du Peuple camerounais. Chaque citoyen peut adhérer à titre personnel ; partis politiques et associations de la société civile peuvent également adhérer. La structure est légère et largement décentralisée : le peuple prend en main la campagne électorale.",
+  "about_org_p2": "L’unité de base est le citoyen conscient qui s’inscrit (en ligne ou en présentiel), promeut le Programme Commun, participe à la campagne de proximité du Candidat Consensuel, va voter et surveille son vote — d’où le slogan : « Le 12 octobre 2025, tout dépend de moi ».",
+  "about_org_p3": "Dans chaque commune, les citoyens se constituent en Comités locaux (inscription en ligne ou via la permanence). Le Comité local fait le porte-à-porte, organise des meetings, encourage la participation et la protection du vote, et saisit les résultats des bureaux de vote dans le logiciel de décompte parallèle.",
+
+  "about_principles_title": "Principes du Programme Commun",
+  "about_pr_1": "État de droit, justice indépendante, libertés fondamentales.",
+  "about_pr_2": "Transparence, lutte contre la corruption, audit de l’État.",
+  "about_pr_3": "Décentralisation effective et gouvernance de proximité.",
+  "about_pr_4": "Relance économique inclusive et création d’emplois.",
+  "about_pr_5": "Investissement social : éducation, santé, cohésion nationale.",
+
+  "about_cta_title": "Envie d’agir ?",
+  "about_cta_text": "Rejoignez un comité local ou créez le vôtre.",
+
+  "footer_home": "Accueil",
+  "footer_about": "À propos",
+  "footer_program": "Programme",
+  "footer_docs": "Documents",
+  "footer_campaign": "Campagne",
+  "footer_news": "Actualités / Médias",
+  "footer_contact": "Contact",
+  "footer_joinus": "REJOIGNEZ-NOUS",
+  "rights": "Tous droits réservés."
+}
+
+{
+  "contact_page_title": "Contact — UPC 2025",
+  "contact_page_desc": "Formulaire de contact, coordonnées officielles et réseaux sociaux de l'Union Pour le Changement 2025.",
+
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "contact_title": "Contact",
+  "contact_subtitle": "Une question, un partenariat, la presse ? Écrivez-nous.",
+
+  "back_home": "← Retour à l’accueil",
+  "goto_form": "Aller au formulaire →",
+  "goto_participate": "Participer →",
+
+  "contact_block_title": "Coordonnées officielles",
+  "contact_block_desc": "Vous pouvez nous joindre via le formulaire ou aux coordonnées ci-dessous.",
+  "contact_email_label": "Email :",
+  "contact_phone_label": "Téléphone :",
+  "contact_addr_label": "Adresse :",
+  "contact_addr_value": "Siège national, Yaoundé, Cameroun",
+  "contact_hours_label": "Horaires :",
+  "contact_hours_value": "Lun – Ven, 9h–17h",
+
+  "socials_title": "Réseaux sociaux",
+
+  "contact_form_title": "Formulaire de contact",
+  "field_name": "Nom & Prénoms",
+  "field_email": "Email",
+  "field_phone": "Téléphone / WhatsApp",
+  "field_subject": "Sujet",
+  "field_message": "Message",
+
+  "privacy_note": "En envoyant, vous acceptez notre politique de confidentialité.",
+  "btn_send_msg": "Envoyer",
+
+  "footer_home": "Accueil",
+  "footer_about": "À propos",
+  "footer_program": "Programme",
+  "footer_docs": "Documents",
+  "footer_campaign": "Campagne",
+  "footer_news": "Actualités / Médias",
+  "footer_contact": "Contact",
+  "footer_joinus": "REJOIGNEZ-NOUS",
+  "rights": "Tous droits réservés."
+}
+
+{
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "prog_title": "Programme Commun",
+  "prog_lead": "Les cinq axes stratégiques pour la Transition et la Refondation.",
+  "prog_download": "Télécharger le Programme (PDF)",
+  "prog_intro_title": "Une feuille de route claire",
+  "prog_intro_text": "Le Programme Commun définit les priorités immédiates pour sécuriser la paix, refonder l’État et relancer l’économie, tout en investissant dans l’humain et le rayonnement du Cameroun.",
+  "prog_intro_pt1": "Actions de transition réalistes et mesurables",
+  "prog_intro_pt2": "Gouvernance éthique et transparente",
+  "prog_intro_pt3": "Approche participative et inclusive",
+  "prog_dl_title": "Documents liés",
+  "prog_dl_text": "Consultez aussi les autres documents officiels.",
+  "prog_dl_btn": "Tous les documents",
+
+  "axis_audit_title": "Audit de l’État camerounais",
+  "axis_audit_text": "Évaluer institutions, finances, infrastructures et fonctionnement pour bâtir des réformes solides.",
+  "axis_peace_title": "Paix – Réconciliation – Cohésion nationale",
+  "axis_peace_text": "Ramener la paix dans les régions en conflit, réconcilier la Nation, restaurer la confiance citoyenne.",
+  "axis_reforms_title": "Réformes politiques et institutionnelles",
+  "axis_reforms_text": "Nouvelle Constitution, code électoral à deux tours, État de droit et bonne gouvernance.",
+  "axis_growth_title": "Croissance économique et développement durable",
+  "axis_growth_text": "Rompre avec l’extraversion et poser les bases d’une économie industrielle et numérique.",
+  "axis_human_title": "Développement du capital humain & solidarité sociale",
+  "axis_human_text": "Réforme éducative, santé universelle, lutte contre le chômage des jeunes, égalité des chances.",
+  "axis_world_title": "Rayonnement panafricain et international",
+  "axis_world_text": "Positionner le Cameroun comme acteur clé en Afrique et dans un monde multipolaire.",
+
+  "steps_title": "Les grandes étapes de la Refondation du Cameroun (3–5 ans)",
+  "step1_title": "Mettre en place les organes de Transition",
+  "step1_president_title": "Président de Transition",
+  "step1_president_text": "Mandat unique et limité, symbole de la Refondation.",
+  "step1_gov_title": "Gouvernement d’Union Nationale de Transition",
+  "step1_gov_text": "Technocrates issus de toutes les forces vives, chargés de mettre en œuvre le programme et d’organiser les élections.",
+  "step1_assembly_title": "Assemblée nationale de Transition",
+  "step1_assembly_text": "Légifère et contrôle l’action du gouvernement.",
+  "step1_court_title": "Cour constitutionnelle",
+  "step1_court_text": "Veille à la constitutionnalité des actes durant la Transition.",
+
+  "step2_title": "Redonner la parole et le pouvoir au Peuple",
+  "step2_assises_title": "Assises Nationales de Refondation",
+  "step2_assises_text": "Consultations locales et régionales pour établir les valeurs du vivre-ensemble et définir le cahier des charges du gouvernement.",
+  "step2_etats_title": "États Généraux Sectoriels",
+  "step2_etats_text": "Analyse des enjeux sectoriels et propositions de solutions techniques et sociales.",
+  "step2_votes_title": "Référendum et élections générales",
+  "step2_votes_text": "Adoption de la nouvelle Constitution et des codes, puis retour à la pleine légitimité démocratique.",
+
+  "back_home": "← Retour à l’accueil",
+  "see_docs": "Voir les documents →",
+  "rights": "Tous droits réservés."
+}
+
+{
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "page_media_title": "Actualités / Médias — UPC 2025",
+  "page_media_desc": "Articles, communiqués, galerie photo/vidéo et réseaux sociaux de l'Union Pour le Changement 2025.",
+
+  "media_title": "Actualités / Médias",
+  "news_subtitle": "Articles, communiqués, photos, vidéos & réseaux sociaux.",
+  "back_home": "Retour à l’accueil",
+  "goto_socials": "Voir nos réseaux",
+
+  "news_title": "Actualités",
+  "news_badge_event": "Meeting",
+  "news_1_title": "Annonce du meeting national",
+  "news_1_date": "13 sept. 2025",
+  "news_1_city": "Yaoundé",
+  "news_1_excerpt": "Présentation du candidat consensuel et mobilisation des comités à l’échelle nationale.",
+  "read_details": "Détails",
+  "join_now": "Adhérer",
+
+  "news_badge_members": "Adhésions",
+  "news_2_title": "Ouverture des adhésions",
+  "news_2_date": "10 sept. 2025",
+  "news_2_excerpt": "Rejoignez la coalition : individuels et organisations peuvent s’inscrire dès aujourd’hui.",
+  "download_form": "Formulaire",
+
+  "news_badge_volunteers": "Bénévolat",
+  "news_3_title": "Appel à volontaires",
+  "news_3_date": "05 sept. 2025",
+  "news_3_excerpt": "Mobilisation, communication, contrôle du vote — participez selon vos compétences.",
+  "read_more": "Lire",
+  "see_program": "Voir le programme",
+
+  "press_title": "Communiqués de presse",
+  "press_1_title": "Communiqué — Lancement officiel de la campagne",
+  "press_1_excerpt": "Déclaration officielle et éléments de langage pour la presse.",
+  "press_2_title": "Note aux médias — Accréditations",
+  "press_2_excerpt": "Procédure d’accréditation et contacts presse.",
+  "press_3_title": "Dossier de presse",
+  "press_3_excerpt": "Présentation synthétique, biographie, visuels et logos.",
+  "btn_pdf": "PDF",
+
+  "gallery_title": "Galerie",
+  "meeting_video_title": "Vidéo du meeting",
+
+  "socials_title": "Réseaux sociaux",
+  "socials_subtitle": "Suivez les annonces, live et contenus exclusifs sur nos canaux officiels.",
+
+  "goto_contact": "Contact →",
+  "rights": "Tous droits réservés."
+}
+
+{
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "docs_page_title": "Documents officiels",
+  "docs_page_lead": "Téléchargez les documents clés en français et en anglais.",
+
+  "filter_all": "Tous",
+  "filter_fr": "Français",
+  "filter_en": "English",
+
+  "docs_groups_title": "Corpus officiel",
+
+  "btn_download": "Télécharger",
+  "btn_view": "Voir",
+
+  "back_home": "← Retour à l’accueil",
+  "goto_socials": "Voir nos réseaux",
+
+  "media_appeal_fr_title": "Appel à l’Union",
+  "media_appeal_fr_meta": "FR • PDF",
+  "media_appeal_en_title": "Appeal to the People",
+  "media_appeal_en_meta": "EN • PDF",
+
+  "media_oath_fr_title": "Engagement du Candidat consensuel",
+  "media_oath_fr_meta": "FR • PDF",
+  "media_oath_en_title": "Oath of the Consensual Candidate",
+  "media_oath_en_meta": "EN • PDF",
+
+  "media_form_fr_title": "Formulaire d’engagement des membres",
+  "media_form_fr_meta": "FR • PDF",
+  "media_form_en_title": "UPC 2025 Member Undertaking",
+  "media_form_en_meta": "EN • PDF",
+
+  "media_news_fr_title": "Communiqués officiels",
+  "media_news_fr_meta": "FR • DOCX/PDF",
+  "media_news_en_title": "Official releases",
+  "media_news_en_meta": "EN • DOCX",
+
+  "btn_pdf": "PDF",
+
+  "socials_title": "Réseaux sociaux",
+  "socials_subtitle": "Suivez les annonces, live et contenus exclusifs sur nos canaux officiels.",
+
+  "goto_contact": "Contact →"
+}
+
+{
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "camp_title": "Campagne populaire",
+  "camp_lead": "Participez à la mobilisation citoyenne : rejoignez ou créez un comité, organisez des actions et faites vivre la campagne près de chez vous.",
+  "camp_cta_committee": "Créer ou rejoindre un comité",
+  "camp_cta_tools": "Voir les outils",
+
+  "camp_participation_title": "Participation citoyenne",
+  "camp_participation_text": "La campagne est d’abord populaire : porte-à-porte, relais communautaires, mobilisation numérique, veille du scrutin et formation des bénévoles. Chaque citoyen a un rôle à jouer.",
+  "camp_participation_pt1": "Informer et convaincre autour de soi",
+  "camp_participation_pt2": "Animer des points d’information et des réunions locales",
+  "camp_participation_pt3": "Contribuer à la logistique et à la communication",
+
+  "camp_stats_title": "Réseau en croissance",
+  "camp_stat_committees": "Comités actifs",
+  "camp_stat_volunteers": "Bénévoles",
+  "camp_stat_regions": "Régions couvertes",
+
+  "camp_committee_title": "Créer & gérer un comité local",
+  "camp_committee_text": "Un comité local rassemble des citoyens motivés pour organiser la mobilisation sur un territoire donné (quartier, ville, campus, diaspora). Chaque comité désigne un coordinateur et planifie des actions régulières.",
+  "camp_committee_pt1": "Coordination (planning, rôles, suivi)",
+  "camp_committee_pt2": "Actions (porte-à-porte, stands, réunions)",
+  "camp_committee_pt3": "Communication (affiches, réseaux, messagerie)",
+  "camp_committee_pt4": "Protection du vote (formation & maillage)",
+
+  "camp_btn_tools": "Boîte à outils",
+  "committee_title": "Créer un comité local",
+  "field_committee": "Nom du comité",
+  "field_city": "Ville / Commune",
+  "field_contact": "Contact (email / tel)",
+  "field_region": "Région",
+  "select_region": "— Sélectionner —",
+  "field_role": "Comment contribuer ?",
+  "select_role": "— Choisir —",
+  "opt_mobilize": "Mobilisation",
+  "opt_comms": "Communication",
+  "opt_vote": "Contrôle du vote",
+  "opt_donor": "Donateur",
+  "opt_influencer": "Influence",
+  "btn_register": "Enregistrer",
+  "committee_note": "Nous vous recontacterons rapidement.",
+
+  "camp_tools_title": "Outils de mobilisation",
+  "camp_tool_events_title": "Organiser un événement",
+  "camp_tool_events_text": "Réunions publiques, caravanes, stands d’information, projections-débats. Téléchargez des kits prêts à l’emploi.",
+  "camp_tool_events_btn": "Kits & checklists",
+  "camp_tool_petitions_title": "Lancer une pétition",
+  "camp_tool_petitions_text": "Proposez des pétitions locales (écoles, routes, hôpitaux) pour fédérer et faire remonter les priorités.",
+  "camp_tool_petitions_btn": "Modèles & conseils",
+  "camp_tool_local_title": "Mener une campagne locale",
+  "camp_tool_local_text": "Micro-campagnes thématiques : écoles, marchés, transports, sécurité, jeunesse, diaspora…",
+  "camp_tool_local_btn": "Boîte à idées",
+  "camp_tool_com_title": "Communication & réseaux",
+  "camp_tool_com_text": "Gabarits d’affiches, posts, stories et argumentaires simples aux couleurs 🇨🇲.",
+  "camp_tool_com_btn": "Templates"
+}
+
+{
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "join_title_page": "Participez à la campagne",
+  "join_lead": "Devenez bénévole, soutenez financièrement, rejoignez ou créez un comité. Inscrivez-vous aussi à la newsletter.",
+  "join_form_title": "Rejoindre la campagne",
+  "field_name": "Nom & Prénoms",
+  "field_phone": "Téléphone / WhatsApp",
+  "field_email": "Email",
+  "field_region": "Région",
+  "select_region": "— Sélectionner —",
+  "join_interests": "Je souhaite contribuer via :",
+  "opt_volunteer": "Bénévolat",
+  "opt_donor": "Don",
+  "opt_committee": "Comité de soutien",
+  "field_role": "Comment contribuer ?",
+  "select_role": "— Choisir —",
+  "opt_mobilize": "Mobilisation",
+  "opt_comms": "Communication",
+  "opt_vote": "Contrôle du vote",
+  "opt_donor": "Donateur",
+  "opt_influencer": "Influence",
+  "field_message_opt": "Message (optionnel)",
+  "btn_send": "Envoyer",
+  "cta_create_committee": "Créer un comité",
+  "privacy_note": "En envoyant, vous acceptez notre politique de confidentialité.",
+
+  "join_side_title": "Soutenir & organiser",
+  "join_side_text": "Votre aide peut être bénévole, matérielle ou financière. Les comités locaux mènent l’action sur le terrain.",
+  "join_cta_donate": "Faire un don",
+  "join_cta_committee": "Rejoindre / Créer un comité",
+
+  "nl_title": "Newsletter UPC 2025",
+  "nl_text": "Recevez les mises à jour : actions, événements, documents et appels à mobilisation.",
+  "nl_pt1": "1 à 2 emails / mois",
+  "nl_pt2": "Désinscription en un clic",
+  "nl_pt3": "Aucune revente de données",
+  "nl_form_title": "S’inscrire à la newsletter",
+  "nl_consent": "J’accepte de recevoir les emails d’information de l’UPC 2025.",
+  "nl_btn": "S’inscrire",
+  "select_optional": "— Optionnel —"
+}
+

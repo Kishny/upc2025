@@ -1,0 +1,57 @@
+{
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "hero_title": "Union Pour le Changement — 2025",
+  "hero_subtitle": "Mobiliser. Fédérer. Gagner.",
+  "cta_join": "Adhérer maintenant",
+  "cta_program": "Télécharger le programme",
+  "cta_candidate": "Découvrir le candidat",
+
+  "candidat_title": "Le Candidat Consensuel",
+  "candidat_intro": "Découvrez la vision, le parcours et l'engagement du candidat consensuel choisi par le peuple.",
+  "btn_read_more": "En savoir plus →",
+
+  "candidate_values_title": "Vision & engagements",
+  "candidate_values_text": "Paix, réformes démocratiques, croissance inclusive, développement humain et rayonnement international du Cameroun.",
+  "cta_read_program": "Lire le programme",
+
+  "doc_program": "UPC 2025 — Programme Commun",
+  "about_text": "Large coalition citoyenne et politique engagée pour l’alternance pacifique en 2025.",
+  "about_point_1": "Fédérer les forces du changement",
+  "about_point_2": "Présenter un candidat consensuel",
+  "about_point_3": "Surveiller et défendre le vote",
+
+  "axis_1_title": "Paix & Cohésion",
+  "axis_1_text": "Réconciliation nationale et stabilité durable.",
+  "axis_2_title": "Réformes politiques",
+  "axis_2_text": "Institutions solides, État de droit, justice indépendante.",
+  "axis_3_title": "Croissance économique",
+  "axis_3_text": "Emplois, entrepreneuriat, infrastructures.",
+  "axis_4_title": "Développement humain",
+  "axis_4_text": "Éducation, santé, protection sociale.",
+  "axis_5_title": "Rayonnement international",
+  "axis_5_text": "Diplomatie active et intégration régionale.",
+
+  "call_action": "Agir près de chez vous",
+  "call_action_text": "Rejoignez un comité existant ou créez le vôtre pour mobiliser autour de l’alternance pacifique en 2025.",
+  "cta_create_committee": "Créer un comité",
+
+  "footer_home": "Accueil",
+  "footer_about": "À propos",
+  "footer_program": "Programme",
+  "footer_docs": "Documents",
+  "footer_campaign": "Campagne",
+  "footer_news": "Actualités / Médias",
+  "footer_contact": "Contact",
+  "footer_joinus": "REJOIGNEZ-NOUS",
+  "rights": "Tous droits réservés."
+}

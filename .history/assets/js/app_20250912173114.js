@@ -1,0 +1,126 @@
+/* =========================
+   NAV / HEADER
+   ========================= */
+const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+
+if (burger) {
+  burger.addEventListener("click", () => nav.classList.toggle("open"));
+  nav
+    ?.querySelectorAll("a")
+    .forEach((a) =>
+      a.addEventListener("click", () => nav.classList.remove("open"))
+    );
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") nav?.classList.remove("open");
+  });
+}
+
+(function markActiveNav() {
+  const path = location.pathname.split("/").pop() || "index.html";
+  document
+    .querySelectorAll("#nav a")
+    .forEach((a) =>
+      a.classList.toggle("active", a.getAttribute("href") === path)
+    );
+})();
+
+/* =========================
+   FOOTER
+   ========================= */
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* =========================
+   HERO — Vidéo
+   ========================= */
+const video = document.getElementById("meetingVideo");
+const btn = document.getElementById("volumeToggle");
+const iconMute = document.getElementById("iconMute");
+const iconSound = document.getElementById("iconSound");
+
+if (video) {
+  video.loop = true;
+  video.play().catch(() => console.log("Autoplay bloqué, vérifier muted"));
+
+  btn?.addEventListener("click", () => {
+    if (video.muted) {
+      video.muted = false;
+      iconMute?.classList.add("hidden");
+      iconSound?.classList.remove("hidden");
+    } else {
+      video.muted = true;
+      iconMute?.classList.remove("hidden");
+      iconSound?.classList.add("hidden");
+    }
+  });
+}
+
+/* =========================
+   FORMS — Connexion Backend
+   ========================= */
+async function postForm(url, data) {
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+function wireFormBackend(id, url, okMessage) {
+  const form = document.getElementById(id);
+  if (!form) return;
+
+  const alertBox = form.querySelector(".form__alert");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    alertBox.hidden = false;
+    alertBox.style.borderColor = "#007A5E";
+    alertBox.textContent = "Envoi en cours…";
+
+    const formData = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await postForm(url, formData);
+      if (res.ok) {
+        alertBox.style.borderColor = "#007A5E";
+        alertBox.textContent = okMessage;
+        form.reset();
+      } else {
+        alertBox.style.borderColor = "#CE1126";
+        alertBox.textContent = `Erreur: ${res.error || "Serveur"}`;
+      }
+    } catch (err) {
+      console.error(err);
+      alertBox.style.borderColor = "#CE1126";
+      alertBox.textContent = "Erreur réseau, réessayez plus tard.";
+    }
+  });
+}
+
+// ⚡ Formulaires
+wireFormBackend(
+  "form-adhesion",
+  "/api/join",
+  "Merci ! Votre adhésion a été enregistrée."
+);
+wireFormBackend("form-committee", "/api/committee", "Comité enregistré !");
+wireFormBackend(
+  "form-newsletter",
+  "/api/newsletter",
+  "Inscription newsletter enregistrée !"
+);
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const img = document.querySelector(".candidat__img");
+  if (img) {
+    img.style.opacity = 0;
+    img.style.transition = "opacity 1s ease";
+    setTimeout(() => (img.style.opacity = 1), 200);
+  }
+});

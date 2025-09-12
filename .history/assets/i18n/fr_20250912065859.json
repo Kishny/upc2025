@@ -1,0 +1,114 @@
+{
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "hero_title": "Union Pour le Changement — 2025",
+  "hero_subtitle": "Mobiliser. Fédérer. Gagner.",
+  "cta_join": "Adhérer maintenant",
+  "cta_program": "Télécharger le programme",
+  "cta_candidate": "Découvrir le candidat",
+
+  "candidat_title": "Le Candidat Consensuel",
+  "candidat_intro": "Découvrez la vision, le parcours et l'engagement du candidat consensuel choisi par le peuple.",
+  "btn_read_more": "En savoir plus →",
+
+  "candidate_values_title": "Vision & engagements",
+  "candidate_values_text": "Paix, réformes démocratiques, croissance inclusive, développement humain et rayonnement international du Cameroun.",
+  "cta_read_program": "Lire le programme",
+
+  "doc_program": "UPC 2025 — Programme Commun",
+  "about_text": "Large coalition citoyenne et politique engagée pour l’alternance pacifique en 2025.",
+  "about_point_1": "Fédérer les forces du changement",
+  "about_point_2": "Présenter un candidat consensuel",
+  "about_point_3": "Surveiller et défendre le vote",
+
+  "axis_1_title": "Paix & Cohésion",
+  "axis_1_text": "Réconciliation nationale et stabilité durable.",
+  "axis_2_title": "Réformes politiques",
+  "axis_2_text": "Institutions solides, État de droit, justice indépendante.",
+  "axis_3_title": "Croissance économique",
+  "axis_3_text": "Emplois, entrepreneuriat, infrastructures.",
+  "axis_4_title": "Développement humain",
+  "axis_4_text": "Éducation, santé, protection sociale.",
+  "axis_5_title": "Rayonnement international",
+  "axis_5_text": "Diplomatie active et intégration régionale.",
+
+  "call_action": "Agir près de chez vous",
+  "call_action_text": "Rejoignez un comité existant ou créez le vôtre pour mobiliser autour de l’alternance pacifique en 2025.",
+  "cta_create_committee": "Créer un comité",
+
+  "footer_home": "Accueil",
+  "footer_about": "À propos",
+  "footer_program": "Programme",
+  "footer_docs": "Documents",
+  "footer_campaign": "Campagne",
+  "footer_news": "Actualités / Médias",
+  "footer_contact": "Contact",
+  "footer_joinus": "REJOIGNEZ-NOUS",
+  "rights": "Tous droits réservés."
+}
+
+{
+  "topbar_msg": "Élection présidentielle — Octobre 2025",
+  "contact": "Contact",
+
+  "nav_about": "À propos",
+  "nav_candidate": "Candidat consensuel",
+  "nav_program": "Programme",
+  "nav_docs": "Documents officiels",
+  "nav_campaign": "Campagne populaire",
+  "nav_join": "Adhérer",
+  "nav_news_media": "Actualités / Médias",
+
+  "about_title": "À propos de l’UPC 2025",
+
+  "about_who_title": "Qui sommes-nous ?",
+  "about_who_p1": "L’Union pour le Changement en 2025 (UPC 2025) est une large coalition de partis politiques, associations de la société civile, personnalités et simples citoyens qui entendent se fédérer autour d’un Programme Commun de Transition et de Refondation et présenter un Candidat Consensuel du Peuple pour l’élection présidentielle d’octobre 2025.",
+  "about_who_p2": "L’Union pour le Changement n’est pas un attelage disparate de candidats retenus par le Conseil Constitutionnel avec des agendas divergents ; c’est une Coalition du Peuple, ouverte à tous les citoyens et à toutes les organisations politiques et civiles — y compris celles dont les candidats ont été injustement exclus — avec un objectif commun : gagner la présidentielle 2025 et refonder le Cameroun pendant une période de transition de 3 à 5 ans.",
+
+  "about_roots_title": "Racines historiques",
+  "about_roots_p1": "L’UPC 2025 puise ses racines dans l’Union pour le Changement de 1992 qui avait porté la victoire (contestée) du candidat de la coalition Ni John Fru Ndi. Depuis, plusieurs initiatives de fédération ont vu le jour : Front des Forces Alternatives (FFA), Stand Up for Cameroon (SUFC), Cadre Citoyen de Concertation (C3), Alliance pour la Transition et la Refondation (ATR), etc.",
+  "about_roots_p2": "En tirant les leçons du passé, le « Groupe de Douala », sous la houlette d’Anicet Ekane, Djeukam Tchameni et Sam Mbaka, a structuré l’appel du peuple pour mutualiser les forces du changement, aboutissant à un Programme Commun de Transition et de Refondation et à un processus transparent de choix d’un Candidat Consensuel du Peuple.",
+
+  "about_goals_title": "Nos objectifs",
+  "about_goals_1_p1": "Fédérer toutes les forces du changement autour d’un Programme Commun de Transition et de Refondation.",
+  "about_goals_2_p1": "Présenter un ",
+  "about_goals_2_strong": "candidat consensuel du Peuple",
+  "about_goals_2_p2": " à la présidentielle 2025.",
+  "about_goals_3_p1": "Mener une ",
+  "about_goals_3_strong": "campagne populaire et participative",
+  "about_goals_4_p1": "Assurer la ",
+  "about_goals_4_strong": "présence et la surveillance",
+  "about_goals_4_p2": " dans tous les bureaux de vote.",
+  "about_goals_5_p1": "Gagner l’élection et ",
+  "about_goals_5_strong": "défendre la victoire du peuple",
+  "about_source_note": "Extrait du document « Section 1 : À propos ».",
+
+  "about_org_title": "Structure organisationnelle",
+  "about_org_p1": "L’Union pour le Changement en 2025 est avant tout une initiative du Peuple camerounais. Chaque citoyen peut adhérer à titre personnel ; partis politiques et associations de la société civile peuvent également adhérer. La structure est légère et largement décentralisée : le peuple prend en main la campagne électorale.",
+  "about_org_p2": "L’unité de base est le citoyen conscient qui s’inscrit (en ligne ou en présentiel), promeut le Programme Commun, participe à la campagne de proximité du Candidat Consensuel, va voter et surveille son vote — d’où le slogan : « Le 12 octobre 2025, tout dépend de moi ».",
+  "about_org_p3": "Dans chaque commune, les citoyens se constituent en Comités locaux (inscription en ligne ou via la permanence). Le Comité local fait le porte-à-porte, organise des meetings, encourage la participation et la protection du vote, et saisit les résultats des bureaux de vote dans le logiciel de décompte parallèle.",
+
+  "about_principles_title": "Principes du Programme Commun",
+  "about_pr_1": "État de droit, justice indépendante, libertés fondamentales.",
+  "about_pr_2": "Transparence, lutte contre la corruption, audit de l’État.",
+  "about_pr_3": "Décentralisation effective et gouvernance de proximité.",
+  "about_pr_4": "Relance économique inclusive et création d’emplois.",
+  "about_pr_5": "Investissement social : éducation, santé, cohésion nationale.",
+
+  "about_cta_title": "Envie d’agir ?",
+  "about_cta_text": "Rejoignez un comité local ou créez le vôtre.",
+
+  "cta_join": "Adhérer",
+  "cta_create_committee": "Créer un comité",
+
+  "rights": "Tous droits réservés."
+}

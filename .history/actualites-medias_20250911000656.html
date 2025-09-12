@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="nav_news">Actualités — UPC 2025</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+  </head>
+  <body>
+    <!-- Topbar + Header identiques (lien actif sur Actualités) -->
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button id="langToggle" class="btn btn--ghost">FR / EN</button
+          ><a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container header__inner">
+        …
+        <nav id="nav" class="nav">
+          …<a href="actualites.html" class="active" data-i18n="nav_news"
+            >Actualités</a
+          >…
+        </nav>
+        …
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <h1 data-i18n="news_title">Actualités</h1>
+          <div class="cards">
+            <article class="card news">
+              <h3 data-i18n="news_1_title">Annonce du meeting national</h3>
+              <p data-i18n="news_1_excerpt">Présentation du candidat...</p>
+            </article>
+            <article class="card news">
+              <h3 data-i18n="news_2_title">Ouverture des adhésions</h3>
+              <p data-i18n="news_2_excerpt">Rejoignez l’Union...</p>
+            </article>
+            <article class="card news">
+              <h3 data-i18n="news_3_title">Appel à volontaires</h3>
+              <p data-i18n="news_3_excerpt">Mobilisation, communication...</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer--solid">
+      <div class="container footer__inner">…</div>
+    </footer>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

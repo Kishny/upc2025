@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Actualités / Médias — UPC 2025</title>
+    <meta
+      name="description"
+      content="Articles, communiqués, galerie photo/vidéo et réseaux sociaux de l'Union Pour le Changement 2025."
+    />
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button
+            id="langToggle"
+            class="btn btn--ghost"
+            aria-label="Toggle language"
+          >
+            FR / EN
+          </button>
+          <a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="UPC 2025" class="brand__logo" />
+          <span class="brand__title">UPC 2025</span>
+        </a>
+        <nav id="nav" class="nav" aria-label="Navigation principale">
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a>
+          <a href="programme.html" data-i18n="nav_program">Programme</a>
+          <a href="documents-officiels.html" data-i18n="nav_docs">Documents</a>
+          <a href="campagne-populaire.html" data-i18n="nav_campaign"
+            >Campagne populaire</a
+          >
+          <a href="participez.html" class="nav__cta" data-i18n="nav_join"
+            >Participez</a
+          >
+          <a
+            href="actualites-medias.html"
+            class="active"
+            data-i18n="nav_news_media"
+            >Actualités / Médias</a
+          >
+          <a href="contact.html" data-i18n="contact">Contact</a>
+        </nav>
+        <button id="burger" class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Héro compact -->
+    <section class="hero" style="min-height: clamp(180px, 32vh, 360px)">
+      <div class="hero__content container">
+        <h1 class="hero__title" data-i18n="media_title">Actualités / Médias</h1>
+        <p class="hero__subtitle" data-i18n="news_subtitle">
+          Articles, communiqués, photos, vidéos & réseaux sociaux.
+        </p>
+        <div class="hero__cta">
+          <a href="index.html" class="btn btn--outline" data-i18n="back_home"
+            >Retour à l’accueil</a
+          >
+          <a href="#reseaux" class="btn btn--primary" data-i18n="goto_socials"
+            >Voir nos réseaux</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Articles (blog/actus) -->
+      <section class="section">
+        <div class="container">
+          <h2 data-i18n="news_title">Actualités</h2>
+          <div class="cards">
+            <!-- Article 1 -->
+            <article class="card news">
+              <h3>Annonce du meeting national</h3>
+              <p class="muted">15 sept. 2025 • Yaoundé</p>
+              <p>
+                Présentation du candidat consensuel et mobilisation des comités
+                à l’échelle nationale.
+              </p>
+              <a href="#" class="btn btn--outline" data-i18n="read_more"
+                >Lire</a
+              >
+            </article>
+            <!-- Article 2 -->
+            <article class="card news">
+              <h3>Ouverture des adhésions</h3>
+              <p class="muted">10 sept. 2025</p>
+              <p>
+                Rejoignez la coalition : individuels et organisations peuvent
+                s’inscrire dès aujourd’hui.
+              </p>
+              <a
+                href="participez.html"
+                class="btn btn--outline"
+                data-i18n="read_more"
+                >Lire</a
+              >
+            </article>
+            <!-- Article 3 -->
+            <article class="card news">
+              <h3>Appel à volontaires</h3>
+              <p class="muted">05 sept. 2025</p>
+              <p>
+                Mobilisation, communication, contrôle du vote — participez selon
+                vos compétences.
+              </p>
+              <a
+                href="participez.html#benevolat"
+                class="btn btn--outline"
+                data-i18n="read_more"
+                >Lire</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Communiqués de presse -->
+      <section class="section section--alt">
+        <div class="container">
+          <h2 data-i18n="press_title">Communiqués de presse</h2>
+          <div class="cards">
+            <article class="card doc">
+              <h3>Communiqué — Lancement officiel de la campagne</h3>
+              <p>
+                Déclaration officielle et éléments de langage pour la presse.
+              </p>
+              <a
+                href="docs/Communique_Lancement.pdf"
+                target="_blank"
+                class="btn btn--outline"
+                >PDF</a
+              >
+            </article>
+            <article class="card doc">
+              <h3>Note aux médias — Accréditations</h3>
+              <p>Procédure d’accréditation et contacts presse.</p>
+              <a
+                href="docs/Note_Medias_Accreditations.pdf"
+                target="_blank"
+                class="btn btn--outline"
+                >PDF</a
+              >
+            </article>
+            <article class="card doc">
+              <h3>Dossier de presse</h3>
+              <p>Présentation synthétique, biographie, visuels et logos.</p>
+              <a
+                href="docs/Dossier_Presse_UPC2025.pdf"
+                target="_blank"
+                class="btn btn--outline"
+                >PDF</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galerie Photos & Vidéos -->
+      <section class="section">
+        <div class="container">
+          <h2 data-i18n="gallery_title">Galerie</h2>
+
+          <!-- Photos -->
+          <div class="gallery" style="margin-bottom: 24px">
+            <img
+              src="assets/img/hero-1.jpg"
+              alt="Meeting de présentation"
+              loading="lazy"
+            />
+            <img
+              src="assets/img/hero-2.jpg"
+              alt="Mobilisation des comités"
+              loading="lazy"
+            />
+            <img src="assets/img/logo.png" alt="Logo UPC 2025" loading="lazy" />
+          </div>
+
+          <!-- Vidéos (YouTube responsive) -->
+          <h3 style="margin-top: 8px" data-i18n="videos_title">Vidéos</h3>
+          <div class="grid-2">
+            <div class="card">
+              <div
+                style="
+                  position: relative;
+                  padding-top: 56.25%;
+                  border-radius: 12px;
+                  overflow: hidden;
+                "
+              >
+                <iframe
+                  src="https://www.youtube.com/embed/VIDEO_ID_1"
+                  title="UPC 2025 — Présentation"
+                  allowfullscreen
+                  style="
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 0;
+                  "
+                ></iframe>
+              </div>
+            </div>
+            <div class="card">
+              <div
+                style="
+                  position: relative;
+                  padding-top: 56.25%;
+                  border-radius: 12px;
+                  overflow: hidden;
+                "
+              >
+                <iframe
+                  src="https://www.youtube.com/embed/VIDEO_ID_2"
+                  title="UPC 2025 — Message du candidat"
+                  allowfullscreen
+                  style="
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 0;
+                  "
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Réseaux sociaux -->
+      <section id="reseaux" class="section section--alt">
+        <div class="container">
+          <h2 data-i18n="socials_title">Réseaux sociaux</h2>
+          <p
+            class="muted"
+            style="margin-bottom: 16px"
+            data-i18n="socials_subtitle"
+          >
+            Suivez les annonces, live et contenus exclusifs sur nos canaux
+            officiels.
+          </p>
+
+          <!-- Liens (icônes) -->
+          <ul
+            class="footer__socials"
+            style="justify-content: center; margin-top: 0"
+          >
+            <li>
+              <a
+                class="sbtn"
+                href="https://facebook.com/"
+                target="_blank"
+                aria-label="Facebook"
+                >f</a
+              >
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://twitter.com/"
+                target="_blank"
+                aria-label="X/Twitter"
+                >X</a
+              >
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://instagram.com/"
+                target="_blank"
+                aria-label="Instagram"
+                >◎</a
+              >
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://t.me/"
+                target="_blank"
+                aria-label="Telegram"
+                >✈</a
+              >
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://tiktok.com/"
+                target="_blank"
+                aria-label="TikTok"
+                >♫</a
+              >
+            </li>
+            <li>
+              <a
+                class="sbtn"
+                href="https://youtube.com/"
+                target="_blank"
+                aria-label="YouTube"
+                >▶</a
+              >
+            </li>
+          </ul>
+
+          <!-- Emplacements pour embeds (facultatif). 
+             Remplacez par les codes officiels si souhaité. -->
+          <div class="grid-2" style="margin-top: 12px">
+            <div class="card">
+              <h3 style="margin-top: 0">Facebook</h3>
+              <!-- Exemple d’embed FB :
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v18.0"></script>
+            <div class="fb-page" data-href="https://www.facebook.com/yourpage" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-hide-cover="false" data-show-facepile="true"></div>
+            -->
+              <p class="muted">Intégrez ici votre flux Facebook (optionnel).</p>
+            </div>
+
+            <div class="card">
+              <h3 style="margin-top: 0">X / Twitter</h3>
+              <!-- Exemple d’embed Twitter :
+            <a class="twitter-timeline" href="https://twitter.com/yourhandle">Tweets by yourhandle</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            -->
+              <p class="muted">
+                Intégrez ici votre timeline X/Twitter (optionnel).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer--solid">
+      <div class="container footer__inner">
+        <small
+          >© <span id="year"></span> UPC 2025 —
+          <span data-i18n="rights">Tous droits réservés.</span></small
+        >
+        <nav class="footer__nav">
+          <a href="documents-officiels.html" data-i18n="footer_docs"
+            >Documents</a
+          >
+          <a href="#" data-i18n="footer_legal">Mentions légales</a>
+          <a href="#" data-i18n="footer_privacy">Confidentialité</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

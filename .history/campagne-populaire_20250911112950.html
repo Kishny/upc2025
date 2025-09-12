@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Campagne populaire — UPC 2025</title>
+    <meta
+      name="description"
+      content="Participation citoyenne, comités locaux, formulaire d’inscription et outils de mobilisation : événements, pétitions, campagnes."
+    />
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+    <meta property="og:title" content="Campagne populaire — UPC 2025" />
+    <meta
+      property="og:description"
+      content="Rejoignez ou créez un comité, organisez des actions et participez à la campagne."
+    />
+    <meta name="theme-color" content="#007A5E" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button
+            id="langToggle"
+            class="btn btn--ghost"
+            aria-label="Toggle language"
+          >
+            FR / EN
+          </button>
+          <a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="UPC 2025" class="brand__logo" />
+          <span class="brand__title">UPC 2025</span>
+        </a>
+        <nav id="nav" class="nav" aria-label="Navigation principale">
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a>
+          <a href="programme.html" data-i18n="nav_program">Programme</a>
+          <a href="documents-officiels.html" data-i18n="nav_docs"
+            >Documents officiels</a
+          >
+          <a
+            href="campagne-populaire.html"
+            class="active"
+            data-i18n="nav_campaign"
+            >Campagne populaire</a
+          >
+          <a href="participez.html" class="nav__cta" data-i18n="nav_join"
+            >Participez</a
+          >
+          <a href="actualites-medias.html" data-i18n="nav_news_media"
+            >Actualités / Médias</a
+          >
+          <a href="contact.html" data-i18n="contact">Contact</a>
+        </nav>
+        <button id="burger" class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- En-tête de page -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-i18n="camp_title">Campagne populaire</h1>
+        <p class="page-hero__lead" data-i18n="camp_lead">
+          Participez à la mobilisation citoyenne : rejoignez ou créez un comité,
+          organisez des actions et faites vivre la campagne près de chez vous.
+        </p>
+        <div class="hero__cta">
+          <a
+            href="#comite"
+            class="btn btn--primary"
+            data-i18n="camp_cta_committee"
+            >Créer ou rejoindre un comité</a
+          >
+          <a href="#outils" class="btn btn--outline" data-i18n="camp_cta_tools"
+            >Voir les outils</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Participation citoyenne -->
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card gradient-cm">
+          <h2 data-i18n="camp_participation_title">Participation citoyenne</h2>
+          <p data-i18n="camp_participation_text">
+            La campagne est d’abord populaire : porte-à-porte, relais
+            communautaires, mobilisation numérique, veille du scrutin et
+            formation des bénévoles. Chaque citoyen a un rôle à jouer.
+          </p>
+          <ul class="checklist">
+            <li data-i18n="camp_participation_pt1">
+              Informer et convaincre autour de soi
+            </li>
+            <li data-i18n="camp_participation_pt2">
+              Animer des points d’information et des réunions locales
+            </li>
+            <li data-i18n="camp_participation_pt3">
+              Contribuer à la logistique et à la communication
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 data-i18n="camp_stats_title">Réseau en croissance</h3>
+          <p data-i18n="camp_stats_text">
+            Des comités naissent dans toutes les régions, en ville comme en zone
+            rurale.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__value">+50</div>
+              <div class="stat__label" data-i18n="camp_stat_committees">
+                Comités actifs
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">+1 000</div>
+              <div class="stat__label" data-i18n="camp_stat_volunteers">
+                Bénévoles
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat__value">10</div>
+              <div class="stat__label" data-i18n="camp_stat_regions">
+                Régions couvertes
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Création & gestion des comités -->
+    <section class="section section--alt" id="comite">
+      <div class="container grid-2">
+        <div>
+          <h2 data-i18n="camp_committee_title">
+            Créer & gérer un comité local
+          </h2>
+          <p data-i18n="camp_committee_text">
+            Un comité local rassemble des citoyens motivés pour organiser la
+            mobilisation sur un territoire donné (quartier, ville, campus,
+            diaspora). Chaque comité désigne un coordinateur et planifie des
+            actions régulières.
+          </p>
+          <ul class="checklist">
+            <li data-i18n="camp_committee_pt1">
+              Coordination (planning, rôles, suivi)
+            </li>
+            <li data-i18n="camp_committee_pt2">
+              Actions (porte-à-porte, stands, réunions)
+            </li>
+            <li data-i18n="camp_committee_pt3">
+              Communication (affiches, réseaux, messagerie)
+            </li>
+            <li data-i18n="camp_committee_pt4">
+              Protection du vote (formation & maillage)
+            </li>
+          </ul>
+          <div class="hero__cta">
+            <a
+              href="#outils"
+              class="btn btn--outline"
+              data-i18n="camp_btn_tools"
+              >Boîte à outils</a
+            >
+          </div>
+        </div>
+
+        <!-- Formulaire (branché sur wireFormDemo('form-committee', ...)) -->
+        <form id="form-committee" class="card" novalidate>
+          <h3 data-i18n="committee_title">Créer un comité local</h3>
+          <label>
+            <span data-i18n="field_committee">Nom du comité</span>
+            <input type="text" name="committee" required />
+          </label>
+          <label>
+            <span data-i18n="field_city">Ville / Commune</span>
+            <input type="text" name="city" required />
+          </label>
+          <label>
+            <span data-i18n="field_contact">Contact (email / tel)</span>
+            <input type="text" name="contact" required />
+          </label>
+          <label>
+            <span data-i18n="field_region">Région</span>
+            <select name="region" required>
+              <option value="" selected disabled data-i18n="select_region">
+                — Sélectionner —
+              </option>
+              <option>Adamaoua</option>
+              <option>Centre</option>
+              <option>Est</option>
+              <option>Extrême-Nord</option>
+              <option>Littoral</option>
+              <option>Nord</option>
+              <option>Nord-Ouest</option>
+              <option>Ouest</option>
+              <option>Sud</option>
+              <option>Sud-Ouest</option>
+              <option>Diaspora</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="field_role">Comment contribuer ?</span>
+            <select name="role" required>
+              <option value="" selected disabled data-i18n="select_role">
+                — Choisir —
+              </option>
+              <option data-i18n="opt_mobilize">Mobilisation</option>
+              <option data-i18n="opt_comms">Communication</option>
+              <option data-i18n="opt_vote">Contrôle du vote</option>
+              <option data-i18n="opt_donor">Donateur</option>
+              <option data-i18n="opt_influencer">Influence</option>
+            </select>
+          </label>
+
+          <div class="form__alert" hidden></div>
+          <div class="hero__cta">
+            <button
+              class="btn btn--primary"
+              type="submit"
+              data-i18n="btn_register"
+            >
+              Enregistrer
+            </button>
+          </div>
+          <small class="form__small" data-i18n="committee_note"
+            >Nous vous recontacterons rapidement.</small
+          >
+        </form>
+      </div>
+    </section>
+
+    <!-- Outils de mobilisation -->
+    <section class="section" id="outils">
+      <div class="container">
+        <h2 data-i18n="camp_tools_title">Outils de mobilisation</h2>
+
+        <div class="tools-grid">
+          <!-- Événements -->
+          <article class="card">
+            <div class="badge">Événements</div>
+            <h3 data-i18n="camp_tool_events_title">Organiser un événement</h3>
+            <p data-i18n="camp_tool_events_text">
+              Réunions publiques, caravanes, stands d’information,
+              projections-débats. Téléchargez des kits prêts à l’emploi.
+            </p>
+            <div class="hero__cta">
+              <a
+                href="#"
+                class="btn btn--outline"
+                data-i18n="camp_tool_events_btn"
+                >Kits & checklists</a
+              >
+            </div>
+          </article>
+
+          <!-- Pétitions -->
+          <article class="card">
+            <div class="badge">Pétitions</div>
+            <h3 data-i18n="camp_tool_petitions_title">Lancer une pétition</h3>
+            <p data-i18n="camp_tool_petitions_text">
+              Proposez des pétitions locales (écoles, routes, hôpitaux) pour
+              fédérer et faire remonter les priorités.
+            </p>
+            <div class="hero__cta">
+              <a
+                href="#"
+                class="btn btn--outline"
+                data-i18n="camp_tool_petitions_btn"
+                >Modèles & conseils</a
+              >
+            </div>
+          </article>
+
+          <!-- Campagnes locales -->
+          <article class="card">
+            <div class="badge">Campagnes</div>
+            <h3 data-i18n="camp_tool_local_title">Mener une campagne locale</h3>
+            <p data-i18n="camp_tool_local_text">
+              Micro-campagnes thématiques : écoles, marchés, transports,
+              sécurité, jeunesse, diaspora…
+            </p>
+            <div class="hero__cta">
+              <a
+                href="#"
+                class="btn btn--outline"
+                data-i18n="camp_tool_local_btn"
+                >Boîte à idées</a
+              >
+            </div>
+          </article>
+
+          <!-- Communication -->
+          <article class="card">
+            <div class="badge">Com</div>
+            <h3 data-i18n="camp_tool_com_title">Communication & réseaux</h3>
+            <p data-i18n="camp_tool_com_text">
+              Gabarits d’affiches, posts, stories et argumentaires simples aux
+              couleurs 🇨🇲.
+            </p>
+            <div class="hero__cta">
+              <a href="#" class="btn btn--outline" data-i18n="camp_tool_com_btn"
+                >Templates</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="section">
+      <div class="container hero__cta">
+        <a href="index.html" class="btn btn--outline" data-i18n="back_home"
+          >← Retour à l’accueil</a
+        >
+        <a href="participez.html" class="btn btn--primary" data-i18n="nav_join"
+          >Participez →</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer--solid">
+      <div class="container footer__inner">
+        <small
+          >© <span id="year"></span> UPC 2025 —
+          <span data-i18n="rights">Tous droits réservés.</span></small
+        >
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>
