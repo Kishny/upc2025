@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Participez — UPC 2025</title>
+    <meta
+      name="description"
+      content="Rejoignez la campagne : bénévolat, dons, comités de soutien. Inscrivez-vous à la newsletter pour recevoir les mises à jour."
+    />
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/logo.png" />
+    <meta property="og:title" content="Participez — UPC 2025" />
+    <meta
+      property="og:description"
+      content="Bénévolat, dons, comités de soutien et newsletter."
+    />
+    <meta name="theme-color" content="#007A5E" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container">
+        <span class="topbar__msg" data-i18n="topbar_msg"
+          >Élection présidentielle — Octobre 2025</span
+        >
+        <div class="topbar__actions">
+          <button
+            id="langToggle"
+            class="btn btn--ghost"
+            aria-label="Toggle language"
+          >
+            FR / EN
+          </button>
+          <a class="btn btn--ghost" href="contact.html" data-i18n="contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="UPC 2025" class="brand__logo" />
+          <span class="brand__title">UPC 2025</span>
+        </a>
+        <nav id="nav" class="nav" aria-label="Navigation principale">
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a>
+          <a href="candidat.html" data-i18n="nav_candidate"
+            >Candidat consensuel</a
+          >
+          <a href="programme.html" data-i18n="nav_program">Programme</a>
+          <a href="adherer.html" class="active nav__cta" data-i18n="nav_join"
+            >Adhérer</a
+          >
+          <a href="documents.html" data-i18n="nav_docs">Documents officiels</a>
+          <a href="campagne-populaire.html" data-i18n="nav_campaign"
+            >Campagne populaire</a
+          >
+          <a href="actualites-medias.html" data-i18n="nav_news_media"
+            >Actualités / Médias</a
+          >
+        </nav>
+        <button id="burger" class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 data-i18n="join_title_page">Participez à la campagne</h1>
+        <p class="page-hero__lead" data-i18n="join_lead">
+          Devenez bénévole, soutenez financièrement, rejoignez ou créez un
+          comité. Inscrivez-vous aussi à la newsletter.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--adhesion">
+      <div class="container grid-2">
+        <!-- Colonne gauche : descriptif -->
+        <div class="adhesion__text">
+          <h2>Adhérer à la coalition</h2>
+          <p>
+            L’Union pour le Changement en 2025 est avant tout une initiative du
+            Peuple camerounais. Chaque citoyen peut adhérer à titre personnel.
+            Les partis politiques et associations de la société civile peuvent
+            également adhérer en tant qu’organisation.
+          </p>
+          <ul>
+            <li>
+              Promouvoir le Programme Commun de Transition et de Refondation
+            </li>
+            <li>
+              Participer activement à la campagne électorale du Candidat
+              CONSENSUEL
+            </li>
+            <li>Surveiller et défendre le vote dès le 12 octobre 2025</li>
+            <li>
+              Contribuer après la victoire à la mise en œuvre du Programme
+              Commun
+            </li>
+          </ul>
+        </div>
+
+        <!-- Colonne droite : formulaire dynamique -->
+        <div class="adhesion__form-wrapper">
+          <!-- Choix type membre -->
+          <div class="adhesion__options" id="member-options">
+            <input
+              type="radio"
+              id="member-individual"
+              name="member_type"
+              value="individual"
+              checked
+            />
+            <label for="member-individual" class="toggle-btn">Individuel</label>
+
+            <input
+              type="radio"
+              id="member-organization"
+              name="member_type"
+              value="organization"
+            />
+            <label for="member-organization" class="toggle-btn"
+              >Organisation</label
+            >
+
+            <div class="toggle-slider slider-member"></div>
+          </div>
+
+          <!-- Choix mode inscription -->
+          <div class="adhesion__options" id="mode-options">
+            <input
+              type="radio"
+              id="mode-online"
+              name="inscription_mode"
+              value="online"
+              checked
+            />
+            <label for="mode-online" class="toggle-btn">En ligne</label>
+
+            <input
+              type="radio"
+              id="mode-paper"
+              name="inscription_mode"
+              value="paper"
+            />
+            <label for="mode-paper" class="toggle-btn">Fiche papier</label>
+
+            <div class="toggle-slider slider-mode"></div>
+          </div>
+
+          <!-- Formulaire -->
+          <form id="form-adhesion" class="form-individual card" novalidate>
+            <h3>Formulaire d'inscription</h3>
+
+            <div class="form-row">
+              <label>
+                <span>Nom & Prénoms</span>
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" required />
+              </label>
+            </div>
+
+            <div class="form-row org-only" style="display: none">
+              <label>
+                <span>Nom de l'organisation</span>
+                <input type="text" name="org_name" />
+              </label>
+              <label>
+                <span>Nombre de membres</span>
+                <input type="number" name="org_members" />
+              </label>
+            </div>
+
+            <label>
+              <span>Région</span>
+              <select name="region" required>
+                <option value="" selected disabled>— Sélectionner —</option>
+                <option>Adamaoua</option>
+                <option>Centre</option>
+                <option>Est</option>
+                <option>Extrême-Nord</option>
+                <option>Littoral</option>
+                <option>Nord</option>
+                <option>Nord-Ouest</option>
+                <option>Ouest</option>
+                <option>Sud</option>
+                <option>Sud-Ouest</option>
+                <option>Diaspora</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Comment contribuer ?</span>
+              <select name="role" required>
+                <option value="" selected disabled>— Choisir —</option>
+                <option>Mobilisation</option>
+                <option>Communication</option>
+                <option>Contrôle du vote</option>
+                <option>Donateur</option>
+                <option>Influence</option>
+              </select>
+            </label>
+
+            <div class="form__alert" hidden></div>
+
+            <div class="hero__cta">
+              <button class="btn btn--primary" type="submit">Envoyer</button>
+              <a
+                href="documents.html"
+                class="btn btn--outline"
+                id="download-form"
+                style="display: none"
+              >
+                Télécharger le formulaire
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulaire Adhésion -->
+    <section class="section">
+      <div class="container grid-2">
+        <form id="form-adhesion" class="card" novalidate>
+          <h2 data-i18n="join_form_title">Rejoindre la campagne</h2>
+
+          <div class="form-row">
+            <label>
+              <span data-i18n="field_name">Nom & Prénoms</span>
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              <span data-i18n="field_phone">Téléphone / WhatsApp</span>
+              <input type="tel" name="phone" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              <span data-i18n="field_region">Région</span>
+              <select name="region" required>
+                <option value="" selected disabled data-i18n="select_region">
+                  — Sélectionner —
+                </option>
+                <option>Adamaoua</option>
+                <option>Centre</option>
+                <option>Est</option>
+                <option>Extrême-Nord</option>
+                <option>Littoral</option>
+                <option>Nord</option>
+                <option>Nord-Ouest</option>
+                <option>Ouest</option>
+                <option>Sud</option>
+                <option>Sud-Ouest</option>
+                <option>Diaspora</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="field_email">Email</span>
+              <input type="email" name="email" />
+            </label>
+          </div>
+
+          <fieldset class="fieldset">
+            <legend data-i18n="join_interests">
+              Je souhaite contribuer via :
+            </legend>
+            <div class="checks">
+              <label
+                ><input type="checkbox" name="interest" value="benevolat" />
+                <span data-i18n="opt_volunteer">Bénévolat</span></label
+              >
+              <label
+                ><input type="checkbox" name="interest" value="don" />
+                <span data-i18n="opt_donor">Don</span></label
+              >
+              <label
+                ><input type="checkbox" name="interest" value="comite" />
+                <span data-i18n="opt_committee">Comité de soutien</span></label
+              >
+            </div>
+          </fieldset>
+
+          <label>
+            <span data-i18n="field_role">Comment contribuer ?</span>
+            <select name="role" required>
+              <option value="" selected disabled data-i18n="select_role">
+                — Choisir —
+              </option>
+              <option data-i18n="opt_mobilize">Mobilisation</option>
+              <option data-i18n="opt_comms">Communication</option>
+              <option data-i18n="opt_vote">Contrôle du vote</option>
+              <option data-i18n="opt_donor">Donateur</option>
+              <option data-i18n="opt_influencer">Influence</option>
+            </select>
+          </label>
+
+          <label>
+            <span data-i18n="field_message_opt">Message (optionnel)</span>
+            <textarea name="message" rows="4" placeholder=""></textarea>
+          </label>
+
+          <div class="form__alert" hidden></div>
+          <div class="hero__cta">
+            <button class="btn btn--primary" type="submit" data-i18n="btn_send">
+              Envoyer
+            </button>
+            <a
+              href="campagne-populaire.html#comite"
+              class="btn btn--outline"
+              data-i18n="cta_create_committee"
+              >Créer un comité</a
+            >
+          </div>
+          <small class="form__small" data-i18n="privacy_note"
+            >En envoyant, vous acceptez notre politique de
+            confidentialité.</small
+          >
+        </form>
+
+        <!-- Bloc info/CTA dons & comités -->
+        <div class="card gradient-cm support-card">
+          <!-- En-tête illustré -->
+          <div class="support-card__header">
+            <h3 data-i18n="join_side_title">Soutenir & organiser</h3>
+
+            <!-- Icône don -->
+            <svg class="ico ico--donate" viewBox="0 0 48 48" aria-hidden="true">
+              <defs>
+                <linearGradient id="g-donate" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#00A47A" />
+                  <stop offset="1" stop-color="#007a5e" />
+                </linearGradient>
+              </defs>
+              <path
+                fill="url(#g-donate)"
+                d="M34.5 8c-3.1 0-5.1 1.5-6.5 3.1C26.6 9.5 24.6 8 21.5 8 17 8 14 11.1 14 15.7c0 7.2 12 15.8 14 17 2-1.2 14-9.8 14-17C42 11.1 39 8 34.5 8z"
+              />
+              <rect
+                x="6"
+                y="34"
+                rx="4"
+                ry="4"
+                width="36"
+                height="8"
+                fill="#00a47a"
+                opacity="0.18"
+              />
+            </svg>
+
+            <!-- Icône comité -->
+            <svg
+              class="ico ico--committee"
+              viewBox="0 0 48 48"
+              aria-hidden="true"
+            >
+              <circle cx="14" cy="16" r="5" fill="#007a5e" />
+              <circle cx="34" cy="16" r="5" fill="#00a47a" />
+              <circle cx="24" cy="12" r="5" fill="#19c6a7" />
+              <rect x="8" y="26" width="32" height="12" rx="6" fill="#e6fff7" />
+              <path
+                d="M10 34c1.2-4.2 4.8-7 9-7h10c4.2 0 7.8 2.8 9 7"
+                fill="none"
+                stroke="#007a5e"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <!-- Icône outils -->
+            <svg class="ico ico--tools" viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="6" y="24" width="18" height="14" rx="2" fill="#007a5e" />
+              <path d="M20 10l4 4-6 6-4-4z" fill="#19c6a7" />
+              <path d="M33 12l3 3-12 12-3-3z" fill="#00a47a" />
+              <rect
+                x="26"
+                y="28"
+                width="16"
+                height="10"
+                rx="2"
+                fill="#e6fff7"
+                stroke="#007a5e"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+
+          <p data-i18n="join_side_text">
+            Votre aide peut être bénévole, matérielle ou financière. Les comités
+            locaux mènent l’action sur le terrain.
+          </p>
+
+          <!-- Boutons avec icônes -->
+          <div class="hero__cta support-card__cta">
+            <a
+              href="contact.html"
+              class="btn btn--secondary btn--with-ico"
+              data-i18n="join_cta_donate"
+            >
+              <svg class="btn-ico" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M10 17s-7-4.6-7-9.2C3 5.6 5 4 7 4c1.5 0 2.7.8 3 2 .3-1.2 1.5-2 3-2 2 0 4 1.6 4 3.8C17 12.4 10 17 10 17z"
+                />
+              </svg>
+              <span>Faire un don</span>
+            </a>
+
+            <a
+              href="campagne-populaire.html#comite"
+              class="btn btn--outline btn--with-ico"
+              data-i18n="join_cta_committee"
+            >
+              <svg class="btn-ico" viewBox="0 0 20 20" aria-hidden="true">
+                <circle cx="6" cy="7" r="3" fill="currentColor" />
+                <circle
+                  cx="14"
+                  cy="7"
+                  r="3"
+                  fill="currentColor"
+                  opacity="0.75"
+                />
+                <rect
+                  x="3"
+                  y="12"
+                  width="14"
+                  height="5"
+                  rx="2"
+                  fill="currentColor"
+                  opacity="0.25"
+                />
+              </svg>
+              <span>Rejoindre / Créer un comité</span>
+            </a>
+          </div>
+
+          <!-- Checklist avec puces SVG -->
+          <ul class="checklist checklist--icons" style="margin-top: 14px">
+            <li data-i18n="join_pt1">
+              <svg class="bullet" viewBox="0 0 16 16" aria-hidden="true">
+                <rect
+                  x="2"
+                  y="3"
+                  width="12"
+                  height="10"
+                  rx="2"
+                  fill="#00a47a"
+                />
+                <path
+                  d="M5 7h6M5 10h3"
+                  stroke="#fff"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Formation express pour bénévoles
+            </li>
+            <li data-i18n="join_pt2">
+              <svg class="bullet" viewBox="0 0 16 16" aria-hidden="true">
+                <circle cx="8" cy="8" r="7" fill="#19c6a7" />
+                <path
+                  d="M5 8l2 2 4-4"
+                  stroke="#fff"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+              </svg>
+              Kits de communication & mobilisation
+            </li>
+            <li data-i18n="join_pt3">
+              <svg class="bullet" viewBox="0 0 16 16" aria-hidden="true">
+                <rect
+                  x="2.5"
+                  y="2.5"
+                  width="11"
+                  height="11"
+                  rx="2"
+                  fill="#007a5e"
+                />
+                <rect x="4.5" y="4.5" width="7" height="7" fill="#e6fff7" />
+              </svg>
+              Calendrier d’actions locales
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section section--alt" id="newsletter">
+      <div class="container grid-2 newsletter">
+        <!-- Colonne gauche : titre + puces -->
+        <div>
+          <!-- Titre avec icône enveloppe -->
+          <div class="nl__title">
+            <!-- Envelope -->
+            <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M2.75 6.5A2.75 2.75 0 0 1 5.5 3.75h13A2.75 2.75 0 0 1 21.25 6.5v11A2.75 2.75 0 0 1 18.5 20.25h-13A2.75 2.75 0 0 1 2.75 17.5v-11Zm2.75-.75a.75.75 0 0 0-.75.75v.22l7 4.41 7-4.41V6.5a.75.75 0 0 0-.75-.75h-12.5Zm13.25 3.18-6.29 3.96a1.5 1.5 0 0 1-1.62 0L4.5 8.93V17.5c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V8.93Z"
+              />
+            </svg>
+            <h2 data-i18n="nl_title">Newsletter UPC 2025</h2>
+          </div>
+
+          <p data-i18n="nl_text">
+            Recevez les mises à jour : actions, événements, documents et appels
+            à mobilisation.
+          </p>
+
+          <ul class="checklist checklist--icons">
+            <li>
+              <!-- Calendar -->
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7 2.75a.75.75 0 0 1 .75.75V5h8.5V3.5a.75.75 0 0 1 1.5 0V5h.75A2.5 2.5 0 0 1 21 7.5v10A2.5 2.5 0 0 1 18.5 20H5.5A2.5 2.5 0 0 1 3 17.5v-10A2.5 2.5 0 0 1 5.5 5h.75V3.5A.75.75 0 0 1 7 2.75ZM5.5 6.5A1 1 0 0 0 4.5 7.5V9h15V7.5a1 1 0 0 0-1-1h-13ZM4.5 10.5V17.5a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-7h-15Z"
+                />
+              </svg>
+              <span data-i18n="nl_pt1">1 à 2 emails / mois</span>
+            </li>
+            <li>
+              <!-- Unsubscribe (one-click) -->
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm0 1.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17Zm-3.78 11.28a.75.75 0 0 1 1.06 0L12 12.06l2.72 2.72a.75.75 0 1 1-1.06 1.06L12 13.12l-1.66 1.66a.75.75 0 0 1-1.06-1.06L10.94 12 9.22 10.28a.75.75 0 1 1 1.06-1.06L12 10.94l1.72-1.72a.75.75 0 1 1 1.06 1.06L13.06 12l1.72 1.72a.75.75 0 0 1-1.06 1.06L12 13.06l-1.72 1.72a.75.75 0 0 1-1.06-1.06L10.94 12 8.22 9.28a.75.75 0 1 1 1.06-1.06L12 10.94l2.72-2.72"
+                />
+              </svg>
+              <span data-i18n="nl_pt2">Désinscription en un clic</span>
+            </li>
+            <li>
+              <!-- Shield / Privacy -->
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2.25c.3 0 .6.07.86.2l6.28 3.14c.55.27.86.83.86 1.43v5.47c0 4.16-2.92 7.98-7.01 9.06a2.6 2.6 0 0 1-1.28 0C7.62 20.47 4.7 16.65 4.7 12.49V7.02c0-.6.33-1.16.87-1.43L11.86 2.45c.25-.13.56-.2.86-.2Zm0 1.54L6.2 6.53v5.96c0 3.43 2.42 6.58 5.8 7.44 3.38-.86 5.8-4.01 5.8-7.44V6.53L12 3.79Zm0 3.46a.9.9 0 0 1 .9.9v3.36h2.1a.9.9 0 0 1 0 1.8h-3a.9.9 0 0 1-.9-.9V8.15a.9.9 0 0 1 .9-.9Z"
+                />
+              </svg>
+              <span data-i18n="nl_pt3">Aucune revente de données</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Colonne droite : formulaire -->
+        <form id="form-newsletter" class="card" novalidate>
+          <h3 data-i18n="nl_form_title">S’inscrire à la newsletter</h3>
+          <label>
+            <span data-i18n="field_email">Email</span>
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            <span data-i18n="field_region">Région (optionnel)</span>
+            <select name="region">
+              <option value="" selected data-i18n="select_optional">
+                — Optionnel —
+              </option>
+              <option>Adamaoua</option>
+              <option>Centre</option>
+              <option>Est</option>
+              <option>Extrême-Nord</option>
+              <option>Littoral</option>
+              <option>Nord</option>
+              <option>Nord-Ouest</option>
+              <option>Ouest</option>
+              <option>Sud</option>
+              <option>Sud-Ouest</option>
+              <option>Diaspora</option>
+            </select>
+          </label>
+          <label class="consent">
+            <input type="checkbox" name="consent" required />
+            <span data-i18n="nl_consent"
+              >J’accepte de recevoir les emails d’information de l’UPC
+              2025.</span
+            >
+          </label>
+
+          <div class="form__alert" hidden></div>
+          <div class="hero__cta">
+            <button class="btn btn--primary" type="submit" data-i18n="nl_btn">
+              S’inscrire
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="section">
+      <div class="container hero__cta">
+        <a href="index.html" class="btn btn--outline" data-i18n="back_home"
+          >← Retour à l’accueil</a
+        >
+        <a href="actualites-medias.html" class="btn btn--primary">
+          <span data-i18n="nav_news_media">Actualités / Médias</span> →
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer--clean">
+      <div class="container footer__wrap">
+        <img src="assets/img/logo.png" alt="UPC 2025" class="footer__logo" />
+
+        <div class="footer__titleline">
+          <span class="footer__line"></span>
+          <h3 class="footer__title" data-i18n="footer_join">REJOIGNEZ-NOUS</h3>
+          <span class="footer__line"></span>
+        </div>
+
+        <ul class="footer__socials">
+          <li>
+            <a class="sbtn" href="#" aria-label="Facebook" title="Facebook"
+              ><span aria-hidden="true">f</span></a
+            >
+          </li>
+          <li>
+            <a class="sbtn" href="#" aria-label="X / Twitter" title="X"
+              ><span aria-hidden="true">X</span></a
+            >
+          </li>
+          <li>
+            <a class="sbtn" href="#" aria-label="Instagram" title="Instagram"
+              ><span aria-hidden="true">◎</span></a
+            >
+          </li>
+          <li>
+            <a class="sbtn" href="#" aria-label="YouTube" title="YouTube"
+              ><span aria-hidden="true">▶</span></a
+            >
+          </li>
+        </ul>
+
+        <nav class="footer__nav">
+          <a href="index.html" data-i18n="nav_home">Accueil</a>
+          <a href="a-propos.html" data-i18n="nav_about">À propos</a>
+          <a href="programme.html" data-i18n="nav_program">Programme</a>
+          <a href="documents-officiels.html" data-i18n="nav_docs">Documents</a>
+          <a href="campagne-populaire.html" data-i18n="nav_campaign"
+            >Campagne</a
+          >
+          <a href="actualites-medias.html" data-i18n="nav_news_media"
+            >Actualités / Médias</a
+          >
+          <a href="contact.html" data-i18n="contact">Contact</a>
+        </nav>
+
+        <small class="footer__copy">
+          © <span id="year"></span> UPC 2025 —
+          <span data-i18n="rights">Tous droits réservés.</span>
+        </small>
+      </div>
+    </footer>
+
+    <script src="assets/js/i18n.js" defer></script>
+    <script src="assets/js/app.js" type="module" defer></script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Générateur de certificat</title>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+  </head>
+  <body>
+    <button id="generate">Générer le certificat</button>
+
+    <script>
+      const { PDFDocument, rgb, StandardFonts } = PDFLib;
+
+      async function generateCertificate(member) {
+        // Création PDF
+        const pdfDoc = await PDFDocument.create();
+        const page = pdfDoc.addPage([600, 400]);
+
+        const width = page.getWidth();
+        const height = page.getHeight();
+
+        // ⚡ Background pastel
+        page.drawRectangle({
+          x: 0,
+          y: 0,
+          width,
+          height,
+          color: rgb(0.93, 0.96, 0.94),
+        });
+
+        // ⚡ Logo (base64 ou URL)
+        const logoUrl = "logo.png"; // remplacer par ton logo
+        const logoBytes = await fetch(logoUrl).then((r) => r.arrayBuffer());
+        const logoImage = await pdfDoc.embedPng(logoBytes);
+        const logoDims = logoImage.scale(0.25);
+        page.drawImage(logoImage, {
+          x: width / 2 - logoDims.width / 2,
+          y: height - logoDims.height - 20,
+          width: logoDims.width,
+          height: logoDims.height,
+        });
+
+        // ⚡ Police
+        const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+        const fontRegular = await pdfDoc.embedFont(StandardFonts.Helvetica);
+
+        // ⚡ Titre
+        page.drawText("CERTIFICAT D'ADHÉSION", {
+          x: 50,
+          y: height - 120,
+          size: 20,
+          font: fontBold,
+          color: rgb(0, 0.3, 0.2),
+        });
+
+        // ⚡ Infos membre
+        let yCursor = height - 160;
+        page.drawText(`Nom: ${member.name}`, {
+          x: 50,
+          y: yCursor,
+          size: 14,
+          font: fontRegular,
+        });
+        yCursor -= 20;
+        if (member.member_type === "organization") {
+          page.drawText(`Organisation: ${member.org_name}`, {
+            x: 50,
+            y: yCursor,
+            size: 14,
+            font: fontRegular,
+          });
+          yCursor -= 20;
+          page.drawText(`Nombre de membres: ${member.org_members}`, {
+            x: 50,
+            y: yCursor,
+            size: 14,
+            font: fontRegular,
+          });
+          yCursor -= 20;
+        }
+        page.drawText(`Date: ${new Date().toLocaleDateString()}`, {
+          x: 50,
+          y: yCursor,
+          size: 14,
+          font: fontRegular,
+        });
+
+        // ⚡ Signatures en bas
+        const signatureY = 50;
+        page.drawText("Djeukam Tchameni", {
+          x: 100,
+          y: signatureY,
+          size: 12,
+          font: fontBold,
+        });
+        page.drawText("Anicet Ekane", {
+          x: 400,
+          y: signatureY,
+          size: 12,
+          font: fontBold,
+        });
+
+        // ⚡ Sauvegarde
+        const pdfBytes = await pdfDoc.save();
+
+        // Téléchargement
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = `${member.name}-certificat.pdf`;
+        link.click();
+      }
+
+      document.getElementById("generate").addEventListener("click", () => {
+        generateCertificate({
+          name: "Jean VOLCY",
+          member_type: "individual",
+          org_name: "UPC",
+          org_members: 12,
+        });
+      });
+    </script>
+  </body>
+</html>

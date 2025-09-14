@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Preview Certificat</title>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+        background: #f9f9f9;
+      }
+      button {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        background: #007a5e;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Aperçu du Certificat d'adhésion</h1>
+
+    <label>Nom: <input type="text" id="name" value="Jean VOLCY" /></label
+    ><br /><br />
+    <label
+      >Type:
+      <select id="memberType">
+        <option value="individual">Individuel</option>
+        <option value="organization">Organisation</option>
+      </select> </label
+    ><br /><br />
+    <button id="generateBtn">Générer PDF</button>
+    <iframe id="pdfPreview" width="600" height="400"></iframe>
+
+    <script>
+      const { PDFDocument, rgb, StandardFonts } = PDFLib;
+
+      document
+        .getElementById("generateBtn")
+        .addEventListener("click", async () => {
+          const name = document.getElementById("name").value;
+          const type = document.getElementById("memberType").value;
+
+          // Crée le PDF
+          const pdfDoc = await PDFDocument.create();
+          const page = pdfDoc.addPage([600, 450]);
+          const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+
+          // Ajouter titre
+          page.drawText("CERTIFICAT D'ADHÉSION", {
+            x: 50,
+            y: 400,
+            size: 24,
+            color: rgb(0, 0.3, 0.2),
+            font,
+          });
+
+          page.drawText(`Nom: ${name}`, { x: 50, y: 360, size: 16 });
+          if (type === "organization") {
+            page.drawText(`Organisation: Mon Organisation`, {
+              x: 50,
+              y: 330,
+              size: 16,
+            });
+          }
+          page.drawText(`Date: ${new Date().toLocaleDateString()}`, {
+            x: 50,
+            y: 300,
+            size: 16,
+          });
+          page.drawText(`Signé par: Djeukam Tchameni & Anicet Ekane`, {
+            x: 50,
+            y: 270,
+            size: 14,
+          });
+
+          // Génère le PDF en base64
+          const pdfBytes = await pdfDoc.saveAsBase64({ dataUri: true });
+
+          // Affiche dans iframe
+          document.getElementById("pdfPreview").src = pdfBytes;
+        });
+    </script>
+  </body>
+</html>

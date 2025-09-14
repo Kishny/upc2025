@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificat d'adhésion UPC2025</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f5f5f5;
+        padding: 2rem;
+      }
+
+      .certificate-preview {
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+      }
+
+      .certificate-preview img.logo {
+        max-width: 180px;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        color: #007a5e;
+        margin-bottom: 1rem;
+      }
+
+      p,
+      li {
+        text-align: left;
+        margin: 0.5rem 0;
+        line-height: 1.5;
+        font-size: 14px;
+      }
+
+      ul {
+        text-align: left;
+        margin-left: 1.5rem;
+      }
+
+      button {
+        margin-top: 2rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #007a5e;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: #005a45;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="certificate-preview" id="certificate">
+      <img src="./logo.png" class="logo" alt="Logo UPC2025" />
+      <h1>CERTIFICAT D'ADHÉSION</h1>
+    </div>
+
+    <button id="downloadBtn">Télécharger le PDF</button>
+
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script>
+      const { PDFDocument, rgb, StandardFonts } = PDFLib;
+
+      async function generatePDF() {
+        const pdfDoc = await PDFDocument.create();
+        const page = pdfDoc.addPage([600, 850]);
+        const width = page.getWidth();
+        const height = page.getHeight();
+
+        const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+        const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+
+        // Background pastel + filigrane léger
+        page.drawRectangle({
+          x: 0,
+          y: 0,
+          width,
+          height,
+          color: rgb(0.93, 0.96, 0.94), // couleur pastel de base
+        });
+
+        // Optionnel : lignes diagonales en filigrane
+        for (let i = -height; i < width; i += 40) {
+          page.drawLine({
+            start: { x: i, y: 0 },
+            end: { x: i + height, y: height },
+            thickness: 0.5,
+            color: rgb(0.85, 0.88, 0.85),
+          });
+        }
+
+        // Logo
+        const logoBytes = await fetch("./logo.png").then((res) =>
+          res.arrayBuffer()
+        );
+        const logoImage = await pdfDoc.embedPng(logoBytes);
+        const logoDims = logoImage.scale(0.5);
+        page.drawImage(logoImage, {
+          x: width / 2 - logoDims.width / 2,
+          y: height - 150,
+          width: logoDims.width,
+          height: logoDims.height,
+        });
+
+        let y = height - 180;
+
+        // Titre
+        page.drawText("CERTIFICAT D'ADHÉSION", {
+          x: 50,
+          y,
+          size: 20,
+          font: fontBold,
+          color: rgb(0, 0.3, 0.2),
+        });
+        y -= 40;
+
+        // Contenu
+        const lines = [
+          `Nom : Jean VOLCY`,
+          `Organisation : Mon Organisation`,
+          `est officiellement membre de l’Union pour le Changement et adhère pleinement au Programme Commun de Transition et de Refondation du Cameroun.`,
+          `Représentant légal de l’organisation : [Nom du représentant] – [Fonction]`,
+          `Ville / Pays : Yaoundé / [Pays]`,
+          `Date d’adhésion : 14/09/2025`,
+          `Engagement de l’organisation :`,
+          `  • Cohésion et solidarité`,
+          `  • Participation citoyenne`,
+          `  • Démocratie et transparence`,
+        ];
+
+        lines.forEach((line) => {
+          page.drawText(line, { x: 50, y, size: 12, font });
+          y -= 18;
+        });
+
+        // Signatures
+        const anicetBytes = await fetch("./anicet.png").then((res) =>
+          res.arrayBuffer()
+        );
+        const djeukamBytes = await fetch("./djeukam.png").then((res) =>
+          res.arrayBuffer()
+        );
+        const anicetImg = await pdfDoc.embedPng(anicetBytes);
+        const djeukamImg = await pdfDoc.embedPng(djeukamBytes);
+
+        page.drawImage(anicetImg, { x: 50, y: 50, width: 100, height: 50 });
+        page.drawImage(djeukamImg, { x: 400, y: 50, width: 100, height: 50 });
+
+        // Noms en dessous des signatures
+        page.drawText("Anicet EKANE", {
+          x: 50,
+          y: 35,
+          size: 12,
+          font: fontBold,
+        });
+        page.drawText("Djeukam TCHAMENI", {
+          x: 400,
+          y: 35,
+          size: 12,
+          font: fontBold,
+        });
+
+        const pdfBytes = await pdfDoc.save();
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "certificat-adhesion.pdf";
+        link.click();
+      }
+
+      document
+        .getElementById("downloadBtn")
+        .addEventListener("click", generatePDF);
+    </script>
+  </body>
+</html>

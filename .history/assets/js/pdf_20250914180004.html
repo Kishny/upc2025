@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificat d'adhésion UPC2025</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f5f5f5;
+        padding: 2rem;
+      }
+
+      .certificate-preview {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .certificate-preview img.logo {
+        max-width: 200px;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        color: #007a5e;
+        margin-bottom: 1rem;
+      }
+
+      p,
+      li {
+        text-align: left;
+        margin: 0.5rem 0;
+        line-height: 1.4;
+      }
+
+      ul {
+        text-align: left;
+        margin-left: 1.5rem;
+      }
+
+      .signatures {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 2.5rem;
+      }
+
+      .signatures .sig {
+        text-align: center;
+      }
+
+      .signatures .sig img {
+        max-width: 120px;
+        margin-bottom: 0.25rem;
+      }
+
+      button {
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #007a5e;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: #005a45;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="certificate-preview" id="certificate">
+      <img src="./logo.png" class="logo" alt="Logo UPC2025" />
+      <h1>CERTIFICAT D'ADHÉSION</h1>
+
+      <p><strong>Nom :</strong> Jean VOLCY</p>
+      <p><strong>Organisation :</strong> Mon Organisation</p>
+      <p>
+        est officiellement membre de l’Union pour le Changement et adhère
+        pleinement au Programme Commun de Transition et de Refondation du
+        Cameroun.
+      </p>
+      <p>
+        <strong>Représentant légal de l’organisation :</strong> [Nom] –
+        [Fonction]
+      </p>
+      <p><strong>Ville / Pays :</strong> Yaoundé / [Pays]</p>
+      <p><strong>Date d’adhésion :</strong> 14/09/2025</p>
+
+      <p><strong>Engagement de l’organisation :</strong></p>
+      <ul>
+        <li>Cohésion et solidarité</li>
+        <li>Participation citoyenne</li>
+        <li>Démocratie et transparence</li>
+      </ul>
+
+      <div class="signatures">
+        <div class="sig">
+          <img src="./anicet.png" alt="Signature Anicet EKANE" />
+          <span>Anicet EKANE</span>
+        </div>
+        <div class="sig">
+          <img src="./djeukam.png" alt="Signature Djeukam TCHAMENI" />
+          <span>Djeukam TCHAMENI</span>
+        </div>
+      </div>
+    </div>
+
+    <button id="downloadBtn">Télécharger le PDF</button>
+
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script>
+      const { PDFDocument, rgb, StandardFonts } = PDFLib;
+
+      async function generatePDF() {
+        const certDiv = document.getElementById("certificate");
+
+        const pdfDoc = await PDFDocument.create();
+        const page = pdfDoc.addPage([600, 800]);
+        const { width, height } = page.getSize();
+
+        const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+        const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+
+        let y = height - 60;
+
+        // Titre
+        page.drawText("CERTIFICAT D'ADHÉSION", {
+          x: 50,
+          y,
+          size: 20,
+          font: fontBold,
+          color: rgb(0, 0.3, 0.2),
+        });
+        y -= 40;
+
+        // Contenu
+        const texts = [
+          `Nom : Jean VOLCY`,
+          `Organisation : Mon Organisation`,
+          `est officiellement membre de l’Union pour le Changement et adhère pleinement au Programme Commun de Transition et de Refondation du Cameroun.`,
+          `Représentant légal de l’organisation : [Nom] – [Fonction]`,
+          `Ville / Pays : Yaoundé / [Pays]`,
+          `Date d’adhésion : 14/09/2025`,
+          `Engagement de l’organisation :`,
+          `  • Cohésion et solidarité`,
+          `  • Participation citoyenne`,
+          `  • Démocratie et transparence`,
+        ];
+
+        texts.forEach((line) => {
+          page.drawText(line, { x: 50, y, size: 12, font });
+          y -= 18;
+        });
+
+        // Signatures
+        const sigY = 50;
+        page.drawText("Anicet EKANE", {
+          x: 50,
+          y: sigY,
+          size: 12,
+          font: fontBold,
+        });
+        page.drawText("Djeukam TCHAMENI", {
+          x: 400,
+          y: sigY,
+          size: 12,
+          font: fontBold,
+        });
+
+        const pdfBytes = await pdfDoc.save();
+
+        // Télécharger le PDF
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "certificat-adhesion.pdf";
+        link.click();
+      }
+
+      document
+        .getElementById("downloadBtn")
+        .addEventListener("click", generatePDF);
+    </script>
+  </body>
+</html>
