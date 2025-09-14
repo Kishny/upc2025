@@ -186,10 +186,13 @@ app.use("/api/committee", require("./routes/committeeRoutes"));
 app.use("/api/newsletter", require("./routes/newsletterRoutes"));
 
 // ----------------- Frontend -----------------
-app.use(express.static(path.join(__dirname, "..", "public")));
-app.get("/documents.html", (_req, res) =>
-  res.sendFile(path.join(__dirname, "..", "public", "documents.html"))
-);
+// Servir les fichiers statiques à partir de la racine
+app.use(express.static(path.join(__dirname, "..")));
+
+// Route catch-all pour SPA
+app.get(/^(?!\/api|\/certificates).*/, (_req, res) => {
+  res.sendFile(path.join(__dirname, "..", "index.html"));
+});
 
 // ----------------- Certificats -----------------
 app.use("/certificates", express.static(path.join(__dirname, "certificates")));
