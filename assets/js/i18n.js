@@ -45,12 +45,16 @@ const I18N = (function () {
     load(newLang);
   }
 
+  // Exposer les méthodes et currentLang
   return { load, get, toggle, currentLang };
 })();
 
-window.I18N.ready = function (callback) {
+/* =========================
+   READY CALLBACK SECURISEE
+   ========================= */
+window.I18NReady = function (callback) {
   const check = () => {
-    if (window.I18N && window.I18N.currentLang) {
+    if (window.I18N && typeof window.I18N.currentLang !== "undefined") {
       callback();
     } else {
       setTimeout(check, 50);

@@ -3,6 +3,7 @@ const router = express.Router();
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
+// Transporter SMTP
 const transporter = nodemailer.createTransport({
   service: "gmail", // ou autre service
   auth: {
@@ -14,7 +15,9 @@ const transporter = nodemailer.createTransport({
 router.post("/", async (req, res) => {
   const { name, email, subject, message } = req.body;
   if (!name || !email || !message)
-    return res.status(400).json({ error: "Champs requis manquants" });
+    return res
+      .status(400)
+      .json({ ok: false, error: "Champs requis manquants" });
 
   try {
     await transporter.sendMail({
@@ -23,9 +26,10 @@ router.post("/", async (req, res) => {
       subject: subject || "Formulaire contact UPC 2025",
       text: `Nom: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
-    res.json({ success: true });
+    res.json({ ok: true });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("Erreur mail contact:", err);
+    res.status(500).json({ ok: false, error: err.message });
   }
 });
 

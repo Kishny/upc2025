@@ -73,3 +73,6 @@ Thumbs.db
 *.log
 *.seed
 *.pid
+
+.history/
+*.pdf
