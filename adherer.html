@@ -668,162 +668,215 @@
 
     <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
     <script>
-      const form = document.getElementById("form-adhesion");
-      const downloadBtn = document.getElementById("download-form");
-      const orgFields = document.querySelector(".org-only");
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("form-adhesion");
+        const downloadBtn = document.getElementById("download-form");
+        const orgFields = document.querySelector(".org-only");
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+        if (!form) return;
 
-        // Validation simple
-        const inputs = form.querySelectorAll("input, select");
-        let isValid = true;
-        inputs.forEach((inp) => {
-          if (inp.required && !inp.value.trim()) {
-            inp.style.borderColor = "red";
-            isValid = false;
-          } else {
-            inp.style.borderColor = "";
+        async function generateAdhesionPDF(formData) {
+          const { PDFDocument, rgb, StandardFonts } = PDFLib;
+          const pdfDoc = await PDFDocument.create();
+          const page = pdfDoc.addPage([600, 850]);
+          const width = page.getWidth();
+          const height = page.getHeight();
+
+          const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+          const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+          const fontItalic = await pdfDoc.embedFont(
+            StandardFonts.HelveticaOblique
+          );
+
+          // 1️⃣ Fond vert pastel
+          page.drawRectangle({
+            x: 0,
+            y: 0,
+            width,
+            height,
+            color: rgb(0.9, 0.95, 0.85),
+          });
+
+          // 2️⃣ Logo centré
+          const logoBytes = await fetch("assets/img/logo.png").then((r) =>
+            r.arrayBuffer()
+          );
+          const logoImage = await pdfDoc.embedPng(logoBytes);
+          const logoDims = logoImage.scale(100 / logoImage.width); // largeur ~100px
+          page.drawImage(logoImage, {
+            x: (width - logoDims.width) / 2,
+            y: height - 130,
+            width: logoDims.width,
+            height: logoDims.height,
+          });
+
+          // 3️⃣ Titres
+          page.drawText("Certificat d’adhésion – Union pour le Changement", {
+            x: 50,
+            y: height - 170,
+            size: 20,
+            font: fontBold,
+            color: rgb(0.2, 0.2, 0.2),
+            maxWidth: width - 100,
+          });
+
+          if (formData.member_type === "organization") {
+            page.drawText("(Organisation)", {
+              x: width / 2 - 30,
+              y: height - 190,
+              size: 14,
+              font: fontItalic,
+              color: rgb(0.3, 0.3, 0.3),
+            });
           }
-        });
-        if (!isValid)
-          return alert("Merci de remplir tous les champs obligatoires.");
 
-        const data = Object.fromEntries(new FormData(form));
-        const mode = document.querySelector(
-          'input[name="inscription_mode"]:checked'
-        ).value;
+          // 4️⃣ Contenu texte
+          let y = height - 220;
+          page.drawLine({
+            start: { x: 50, y },
+            end: { x: width - 50, y },
+            thickness: 1,
+            color: rgb(0.7, 0.7, 0.7),
+          });
+          y -= 30;
 
-        if (mode === "online") {
-          try {
-            const { PDFDocument, rgb, StandardFonts } = PDFLib;
-            const pdfDoc = await PDFDocument.create();
-            const page = pdfDoc.addPage([600, 850]);
-            const width = page.getWidth();
-            const height = page.getHeight();
-            const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-            const fontBold = await pdfDoc.embedFont(
-              StandardFonts.HelveticaBold
-            );
-
-            // Fond pastel
-            page.drawRectangle({
-              x: 0,
-              y: 0,
-              width,
-              height,
-              color: rgb(0.93, 0.96, 0.94),
-            });
-
-            // Logo
-            const logoBytes = await fetch("./logo.png").then((r) =>
-              r.arrayBuffer()
-            );
-            const logoImg = await pdfDoc.embedPng(logoBytes);
-            const logoDims = logoImg.scale(0.5);
-            page.drawImage(logoImg, {
-              x: width / 2 - logoDims.width / 2,
-              y: height - 150,
-              width: logoDims.width,
-              height: logoDims.height,
-            });
-
-            // Titre
-            page.drawText("CERTIFICAT D'ADHÉSION", {
-              x: 50,
-              y: height - 200,
-              size: 24,
-              font: fontBold,
-              color: rgb(0, 0.3, 0.2),
-            });
-
-            let y = height - 240;
-            page.drawText(`Nom: ${data.name}`, { x: 50, y, size: 14, font });
+          page.drawText("Ce certificat atteste que :", {
+            x: 50,
+            y,
+            size: 12,
+            font,
+          });
+          y -= 20;
+          page.drawText(`${formData.name}`, { x: 50, y, size: 12, fontBold });
+          y -= 20;
+          if (formData.member_type === "organization") {
+            page.drawText(`${formData.org_name}`, { x: 50, y, size: 12, font });
             y -= 20;
-            if (data.member_type === "organization") {
-              page.drawText(`Organisation: ${data.org_name}`, {
-                x: 50,
-                y,
-                size: 14,
-                font,
-              });
-              y -= 20;
+          }
+          page.drawText(
+            `est officiellement membre de l’Union pour le Changement et adhère pleinement au Programme Commun de Transition et de Refondation du Cameroun.`,
+            {
+              x: 50,
+              y,
+              size: 12,
+              font,
+              maxWidth: width - 100,
             }
-            page.drawText(`Région: ${data.region}`, {
-              x: 50,
-              y,
-              size: 14,
-              font,
-            });
-            y -= 20;
-            page.drawText(`Contribution: ${data.role}`, {
-              x: 50,
-              y,
-              size: 14,
-              font,
-            });
-            y -= 30;
+          );
 
-            // Engagements
-            page.drawText("Engagement de l'organisation:", {
-              x: 50,
-              y,
-              size: 14,
-              font: fontBold,
-            });
-            y -= 20;
-            [
-              "Cohésion et solidarité",
-              "Participation citoyenne",
-              "Démocratie et transparence",
-            ].forEach((e) => {
-              page.drawText(`• ${e}`, { x: 70, y, size: 12, font });
-              y -= 18;
-            });
+          y -= 40;
+          page.drawLine({
+            start: { x: 50, y },
+            end: { x: width - 50, y },
+            thickness: 1,
+            color: rgb(0.7, 0.7, 0.7),
+          });
+          y -= 30;
 
-            // Signatures
-            const anicetBytes = await fetch("./anicet.png").then((r) =>
-              r.arrayBuffer()
-            );
-            const djeukamBytes = await fetch("./djeukam.png").then((r) =>
-              r.arrayBuffer()
-            );
-            const anicetImg = await pdfDoc.embedPng(anicetBytes);
-            const djeukamImg = await pdfDoc.embedPng(djeukamBytes);
-            page.drawImage(anicetImg, { x: 50, y: 50, width: 100, height: 50 });
-            page.drawImage(djeukamImg, {
-              x: 400,
-              y: 50,
-              width: 100,
-              height: 50,
-            });
+          page.drawText(
+            `Représentant légal de l’organisation : ${
+              formData.representant || ""
+            }`,
+            { x: 50, y, size: 12, font }
+          );
+          y -= 20;
+          page.drawText(`Fonction : ${formData.function || ""}`, {
+            x: 50,
+            y,
+            size: 12,
+            font,
+          });
+          y -= 20;
+          page.drawText(`Ville / Pays : ${formData.city || ""}`, {
+            x: 50,
+            y,
+            size: 12,
+            font,
+          });
+          y -= 20;
+          page.drawText(`Date d’adhésion : ${formData.date || ""}`, {
+            x: 50,
+            y,
+            size: 12,
+            font,
+          });
+          y -= 40;
+          page.drawLine({
+            start: { x: 50, y },
+            end: { x: width - 50, y },
+            thickness: 1,
+            color: rgb(0.7, 0.7, 0.7),
+          });
+          y -= 30;
 
-            // Générer le blob PDF
-            const pdfBytes = await pdfDoc.save();
-            const pdfBlob = new Blob([pdfBytes], { type: "application/pdf" });
-            const pdfBlobUrl = URL.createObjectURL(pdfBlob);
+          page.drawText("Engagement de l’organisation", {
+            x: 50,
+            y,
+            size: 14,
+            font: fontBold,
+          });
+          y -= 20;
+          page.drawText(
+            "L’organisation s’engage à promouvoir les valeurs de l’Union pour le Changement :",
+            { x: 50, y, size: 12, font }
+          );
+          y -= 20;
+          [
+            "• Cohésion et solidarité",
+            "• Participation citoyenne",
+            "• Démocratie et transparence",
+          ].forEach((line) => {
+            page.drawText(line, { x: 70, y, size: 12, font });
+            y -= 18;
+          });
 
-            // Afficher le bouton de téléchargement
-            downloadBtn.style.display = "inline-block";
-            downloadBtn.classList.add("btn-download");
-            downloadBtn.href = pdfBlobUrl;
-            downloadBtn.download = `certificat_${data.name}.pdf`;
+          y -= 40;
+          page.drawLine({
+            start: { x: 50, y },
+            end: { x: width - 50, y },
+            thickness: 1,
+            color: rgb(0.7, 0.7, 0.7),
+          });
 
-            // ⚡ Pop-up après 8 secondes
-            setTimeout(() => {
-              alert("Votre certificat est prêt au téléchargement !");
-            }, 8000);
-          } catch (err) {
-            console.error(err);
-            alert("Erreur lors de la génération du certificat.");
-          }
-        } else {
-          window.location.href = "documents.html";
+          // 5️⃣ Signatures (images uniquement, sans noms)
+          const sig1Bytes = await fetch("assets/img/anicet.png").then((r) =>
+            r.arrayBuffer()
+          );
+          const sig2Bytes = await fetch("assets/img/djeukam.png").then((r) =>
+            r.arrayBuffer()
+          );
+          const sig1 = await pdfDoc.embedPng(sig1Bytes);
+          const sig2 = await pdfDoc.embedPng(sig2Bytes);
+
+          // Dessin des images uniquement
+          page.drawImage(sig1, { x: 100, y: 50, width: 100, height: 50 });
+          page.drawImage(sig2, { x: 400, y: 50, width: 100, height: 50 });
+
+          // Générer URL PDF
+          const pdfBytes = await pdfDoc.save();
+          const blob = new Blob([pdfBytes], { type: "application/pdf" });
+          return URL.createObjectURL(blob);
         }
 
-        // Réinitialiser le formulaire
-        form.reset();
-        orgFields.style.display = "none";
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          // Validation simple
+          let isValid = true;
+          form.querySelectorAll("input, select").forEach((inp) => {
+            if (inp.required && !inp.value.trim()) {
+              inp.style.borderColor = "red";
+              isValid = false;
+            } else inp.style.borderColor = "";
+          });
+          if (!isValid)
+            return alert("Merci de remplir tous les champs obligatoires.");
+
+          const formData = Object.fromEntries(new FormData(form));
+          downloadBtn.href = await generateAdhesionPDF(formData);
+          downloadBtn.download = `certificat_${formData.name}.pdf`;
+          downloadBtn.style.display = "inline-block";
+        });
       });
     </script>
     <script src="assets/js/i18n.js" defer></script>

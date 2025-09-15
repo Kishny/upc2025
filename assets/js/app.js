@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     FORMULAIRE D’ADHÉSION
-  ========================= */
+   FORMULAIRE D’ADHÉSION LOGIQUE
+========================= */
   const form = document.getElementById("form-adhesion");
   const orgFields = document.querySelector(".org-only");
   const downloadBtn = document.getElementById("download-form");
@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       'input[name="inscription_mode"]'
     );
 
+    // Mettre à jour l'affichage du formulaire selon le type et le mode
     function updateFormDisplay() {
       const memberType = document.querySelector(
         'input[name="member_type"]:checked'
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'input[name="inscription_mode"]:checked'
       ).value;
 
-      // Organisation
+      // Affichage des champs organisation
       if (memberType === "organization") {
         orgFields.style.display = "flex";
         document.querySelector('input[name="org_name"]').required = true;
@@ -65,18 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
         form.classList.remove("form-org");
       }
 
-      // Mode inscription
-      if (mode === "online") {
-        downloadBtn.textContent = "Télécharger mon certificat";
-        downloadBtn.href = "#";
-        downloadBtn.onclick = null;
-        downloadBtn.style.display = "inline-block";
-      } else {
-        downloadBtn.textContent = "Télécharger la fiche d'adhésion";
-        downloadBtn.href = "documents.html";
-        downloadBtn.target = "_self";
-        downloadBtn.style.display = "inline-block";
-      }
+      // Masquer le bouton tant que le formulaire n'est pas validé
+      downloadBtn.style.display = "none";
     }
 
     memberTypeRadios.forEach((r) =>
@@ -84,107 +75,42 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     modeRadios.forEach((r) => r.addEventListener("change", updateFormDisplay));
 
-    form.addEventListener("submit", async (e) => {
+    // Gestion du submit
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const inputs = form.querySelectorAll("input, select");
+      // Validation simple
       let isValid = true;
-      inputs.forEach((inp) => {
+      form.querySelectorAll("input, select").forEach((inp) => {
         if (inp.required && !inp.value.trim()) {
           inp.style.borderColor = "red";
           isValid = false;
         } else inp.style.borderColor = "";
       });
-      if (!isValid) {
-        alert("Merci de remplir tous les champs obligatoires.");
-        return;
-      }
+      if (!isValid)
+        return alert("Merci de remplir tous les champs obligatoires.");
 
-      const formData = Object.fromEntries(new FormData(form));
       const mode = document.querySelector(
         'input[name="inscription_mode"]:checked'
       ).value;
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Envoi en cours...";
-
-      try {
-        if (mode === "online" && window.PDFLib) {
-          const { PDFDocument, rgb, StandardFonts } = PDFLib;
-          const pdfDoc = await PDFDocument.create();
-          const page = pdfDoc.addPage([600, 850]);
-          const width = page.getWidth();
-          const height = page.getHeight();
-          const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-          const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
-
-          page.drawRectangle({
-            x: 0,
-            y: 0,
-            width,
-            height,
-            color: rgb(0.93, 0.96, 0.94),
-          });
-          page.drawText("CERTIFICAT D'ADHÉSION", {
-            x: 50,
-            y: height - 200,
-            size: 24,
-            font: fontBold,
-            color: rgb(0, 0.3, 0.2),
-          });
-
-          let y = height - 240;
-          page.drawText(`Nom: ${formData.name}`, { x: 50, y, size: 14, font });
-          y -= 20;
-          if (formData.member_type === "organization") {
-            page.drawText(`Organisation: ${formData.org_name}`, {
-              x: 50,
-              y,
-              size: 14,
-              font,
-            });
-            y -= 20;
-          }
-          page.drawText(`Région: ${formData.region}`, {
-            x: 50,
-            y,
-            size: 14,
-            font,
-          });
-          y -= 20;
-          page.drawText(`Contribution: ${formData.role}`, {
-            x: 50,
-            y,
-            size: 14,
-            font,
-          });
-          y -= 30;
-
-          const pdfBytes = await pdfDoc.save();
-          const blob = new Blob([pdfBytes], { type: "application/pdf" });
-          const url = URL.createObjectURL(blob);
-
-          downloadBtn.style.display = "inline-block";
-          downloadBtn.href = url;
-          downloadBtn.download = `certificat_${formData.name}.pdf`;
-          downloadBtn.classList.add("btn-download");
-          downloadBtn.textContent = "Télécharger mon certificat";
-
-          setTimeout(() => {
-            alert("Votre certificat est prêt au téléchargement !");
-          }, 15000);
-        }
-
-        if (mode === "paper") window.location.href = "documents.html";
-
-        form.reset();
-        updateFormDisplay();
-      } catch (err) {
-        console.error(err);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Rejoindre";
+      // ✅ Mode online → afficher le bouton de téléchargement PDF
+      if (mode === "online") {
+        downloadBtn.textContent = "Télécharger mon certificat";
+        downloadBtn.href = "#"; // lien sera remplacé par ton code HTML qui génère le PDF
+        downloadBtn.onclick = null; // tu gères la génération PDF dans le HTML
+        downloadBtn.style.display = "inline-block";
       }
+
+      // ✅ Mode papier → redirection vers documents.html
+      if (mode === "paper") {
+        window.location.href = "documents.html";
+      }
+
+      form.reset();
+      orgFields.style.display = "none";
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Rejoindre";
     });
 
     updateFormDisplay();
