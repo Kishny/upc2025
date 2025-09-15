@@ -9,16 +9,20 @@ const BASE_URL = ["127.0.0.1", "localhost"].includes(location.hostname)
    Initialisation après DOM chargé
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
-  /* =========================
-     MENU BURGER RESPONSIVE
-  ========================= */
+  // =========================
+  // MENU BURGER RESPONSIVE
+  // =========================
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
 
   if (burger && nav) {
     burger.addEventListener("click", () => {
-      nav.classList.toggle("nav--open");
+      nav.classList.toggle("open");
       burger.classList.toggle("burger--active");
+      console.log(
+        "Burger clicked! Menu state:",
+        nav.classList.contains("open")
+      );
     });
   }
 
