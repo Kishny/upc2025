@@ -6,7 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon backend/server.js"
   },
   "keywords": [],
   "author": "Jean VOLCY",

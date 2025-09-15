@@ -47,11 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
         form.classList.remove("form-org");
       }
 
-      if (mode === "online") {
-        downloadBtn.style.display = "none";
-      } else {
-        downloadBtn.style.display = "inline-block";
-      }
+      if (mode === "online") downloadBtn.style.display = "none";
+      else downloadBtn.style.display = "inline-block";
     }
 
     memberTypeRadios.forEach((r) =>
@@ -59,6 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     modeRadios.forEach((r) => r.addEventListener("change", updateFormDisplay));
 
+    // =========================
+    // Soumission adhésion
+    // =========================
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -69,9 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (inp.required && !inp.value.trim()) {
           inp.style.borderColor = "red";
           isValid = false;
-        } else {
-          inp.style.borderColor = "";
-        }
+        } else inp.style.borderColor = "";
       });
       if (!isValid) {
         alert("Merci de remplir tous les champs obligatoires.");
@@ -87,41 +85,102 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.textContent = "Envoi en cours...";
 
       try {
-        const res = await fetch(`${BASE_URL}/api/join`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
-        const result = await res.json();
-        console.log("Résultat API:", result);
+        // =========================
+        // Génération PDF côté frontend
+        // =========================
+        if (mode === "online") {
+          if (window.PDFLib) {
+            const { PDFDocument, rgb, StandardFonts } = PDFLib;
+            const pdfDoc = await PDFDocument.create();
+            const page = pdfDoc.addPage([600, 850]);
+            const width = page.getWidth();
+            const height = page.getHeight();
+            const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+            const fontBold = await pdfDoc.embedFont(
+              StandardFonts.HelveticaBold
+            );
 
-        if (!result.ok) {
-          alert("Erreur : " + (result.error || "Serveur"));
-          return;
+            // Fond pastel
+            page.drawRectangle({
+              x: 0,
+              y: 0,
+              width,
+              height,
+              color: rgb(0.93, 0.96, 0.94),
+            });
+
+            // Titre
+            page.drawText("CERTIFICAT D'ADHÉSION", {
+              x: 50,
+              y: height - 200,
+              size: 24,
+              font: fontBold,
+              color: rgb(0, 0.3, 0.2),
+            });
+
+            let y = height - 240;
+            page.drawText(`Nom: ${formData.name}`, {
+              x: 50,
+              y,
+              size: 14,
+              font,
+            });
+            y -= 20;
+            if (formData.member_type === "organization") {
+              page.drawText(`Organisation: ${formData.org_name}`, {
+                x: 50,
+                y,
+                size: 14,
+                font,
+              });
+              y -= 20;
+            }
+            page.drawText(`Région: ${formData.region}`, {
+              x: 50,
+              y,
+              size: 14,
+              font,
+            });
+            y -= 20;
+            page.drawText(`Contribution: ${formData.role}`, {
+              x: 50,
+              y,
+              size: 14,
+              font,
+            });
+            y -= 30;
+
+            // Signatures – exemple, images locales
+            // Tu peux ajouter ici logo ou signataires si nécessaire
+
+            // Créer blob PDF
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: "application/pdf" });
+            const url = URL.createObjectURL(blob);
+
+            downloadBtn.style.display = "inline-block";
+            downloadBtn.href = url;
+            downloadBtn.download = `certificat_${formData.name}.pdf`;
+            downloadBtn.classList.add("btn-download");
+            downloadBtn.textContent = "Télécharger mon certificat";
+
+            // Pop-up après 15 secondes
+            setTimeout(() => {
+              alert("Votre certificat est prêt au téléchargement !");
+            }, 15000);
+          }
         }
 
-        alert("Formulaire envoyé avec succès ! Merci pour votre adhésion.");
-        form.reset();
-        updateFormDisplay();
-
+        // =========================
+        // Mode papier → redirection
+        // =========================
         if (mode === "paper") window.location.href = "documents.html";
 
-        if (mode === "online" && result.pdfPath) {
-          downloadBtn.style.display = "inline-block";
-          downloadBtn.removeAttribute("disabled");
-          downloadBtn.classList.add("btn-download");
-          downloadBtn.textContent = "Télécharger mon certificat";
-          downloadBtn.href = `${BASE_URL}/${result.pdfPath}`;
-          downloadBtn.target = "_blank";
-
-          // Pop-up après 15 secondes
-          setTimeout(() => {
-            alert("Votre certificat est prêt au téléchargement !");
-          }, 15000);
-        }
+        form.reset();
+        updateFormDisplay();
       } catch (err) {
         console.error(err);
-        alert("Erreur serveur, réessayez plus tard.");
+        // On ignore le backend pour PDF côté client → pas d’alerte serveur
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "Rejoindre";
@@ -147,9 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (input.required && !input.value.trim()) {
           input.style.borderColor = "red";
           isValid = false;
-        } else {
-          input.style.borderColor = "";
-        }
+        } else input.style.borderColor = "";
       });
 
       if (!isValid) {
@@ -165,11 +222,13 @@ document.addEventListener("DOMContentLoaded", () => {
       alertBox.hidden = true;
 
       try {
+        // Envoi au backend (ou service d’email)
         const res = await fetch(`${BASE_URL}/api/contact`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         });
+
         const result = await res.json();
 
         if (result.ok) {
@@ -195,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     COOKIES
+     COOKIES SITE
   ========================= */
   if (!localStorage.getItem("cookiesAccepted")) {
     const banner = document.createElement("div");
