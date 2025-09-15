@@ -23,7 +23,7 @@ app.use(
     credentials: true,
   })
 );
-app.use(rateLimit({ windowMs: 60 * 1000, max: 30 }));
+app.use(rateLimit({ windowMs: 60 * 1000, max: 600 }));
 
 // ----------------- MongoDB -----------------
 mongoose
