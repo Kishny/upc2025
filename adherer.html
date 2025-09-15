@@ -809,10 +809,10 @@
             downloadBtn.href = pdfBlobUrl;
             downloadBtn.download = `certificat_${data.name}.pdf`;
 
-            // ⚡ Pop-up après 15 secondes
+            // ⚡ Pop-up après 8 secondes
             setTimeout(() => {
               alert("Votre certificat est prêt au téléchargement !");
-            }, 15000);
+            }, 8000);
           } catch (err) {
             console.error(err);
             alert("Erreur lors de la génération du certificat.");
