@@ -10,6 +10,19 @@ const BASE_URL = ["127.0.0.1", "localhost"].includes(location.hostname)
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
   /* =========================
+     MENU BURGER RESPONSIVE
+  ========================= */
+  const burger = document.getElementById("burger");
+  const nav = document.getElementById("nav");
+
+  if (burger && nav) {
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav--open");
+      burger.classList.toggle("burger--active");
+    });
+  }
+
+  /* =========================
      FORMULAIRE D’ADHÉSION
   ========================= */
   const form = document.getElementById("form-adhesion");
@@ -56,13 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     modeRadios.forEach((r) => r.addEventListener("change", updateFormDisplay));
 
-    // =========================
     // Soumission adhésion
-    // =========================
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      // Validation simple
       const inputs = form.querySelectorAll("input, select");
       let isValid = true;
       inputs.forEach((inp) => {
@@ -85,102 +95,80 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.textContent = "Envoi en cours...";
 
       try {
-        // =========================
-        // Génération PDF côté frontend
-        // =========================
-        if (mode === "online") {
-          if (window.PDFLib) {
-            const { PDFDocument, rgb, StandardFonts } = PDFLib;
-            const pdfDoc = await PDFDocument.create();
-            const page = pdfDoc.addPage([600, 850]);
-            const width = page.getWidth();
-            const height = page.getHeight();
-            const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-            const fontBold = await pdfDoc.embedFont(
-              StandardFonts.HelveticaBold
-            );
+        // PDF côté frontend
+        if (mode === "online" && window.PDFLib) {
+          const { PDFDocument, rgb, StandardFonts } = PDFLib;
+          const pdfDoc = await PDFDocument.create();
+          const page = pdfDoc.addPage([600, 850]);
+          const width = page.getWidth();
+          const height = page.getHeight();
+          const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+          const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
 
-            // Fond pastel
-            page.drawRectangle({
-              x: 0,
-              y: 0,
-              width,
-              height,
-              color: rgb(0.93, 0.96, 0.94),
-            });
+          page.drawRectangle({
+            x: 0,
+            y: 0,
+            width,
+            height,
+            color: rgb(0.93, 0.96, 0.94),
+          });
 
-            // Titre
-            page.drawText("CERTIFICAT D'ADHÉSION", {
-              x: 50,
-              y: height - 200,
-              size: 24,
-              font: fontBold,
-              color: rgb(0, 0.3, 0.2),
-            });
+          page.drawText("CERTIFICAT D'ADHÉSION", {
+            x: 50,
+            y: height - 200,
+            size: 24,
+            font: fontBold,
+            color: rgb(0, 0.3, 0.2),
+          });
 
-            let y = height - 240;
-            page.drawText(`Nom: ${formData.name}`, {
+          let y = height - 240;
+          page.drawText(`Nom: ${formData.name}`, { x: 50, y, size: 14, font });
+          y -= 20;
+          if (formData.member_type === "organization") {
+            page.drawText(`Organisation: ${formData.org_name}`, {
               x: 50,
               y,
               size: 14,
               font,
             });
             y -= 20;
-            if (formData.member_type === "organization") {
-              page.drawText(`Organisation: ${formData.org_name}`, {
-                x: 50,
-                y,
-                size: 14,
-                font,
-              });
-              y -= 20;
-            }
-            page.drawText(`Région: ${formData.region}`, {
-              x: 50,
-              y,
-              size: 14,
-              font,
-            });
-            y -= 20;
-            page.drawText(`Contribution: ${formData.role}`, {
-              x: 50,
-              y,
-              size: 14,
-              font,
-            });
-            y -= 30;
-
-            // Signatures – exemple, images locales
-            // Tu peux ajouter ici logo ou signataires si nécessaire
-
-            // Créer blob PDF
-            const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes], { type: "application/pdf" });
-            const url = URL.createObjectURL(blob);
-
-            downloadBtn.style.display = "inline-block";
-            downloadBtn.href = url;
-            downloadBtn.download = `certificat_${formData.name}.pdf`;
-            downloadBtn.classList.add("btn-download");
-            downloadBtn.textContent = "Télécharger mon certificat";
-
-            // Pop-up après 15 secondes
-            setTimeout(() => {
-              alert("Votre certificat est prêt au téléchargement !");
-            }, 15000);
           }
+          page.drawText(`Région: ${formData.region}`, {
+            x: 50,
+            y,
+            size: 14,
+            font,
+          });
+          y -= 20;
+          page.drawText(`Contribution: ${formData.role}`, {
+            x: 50,
+            y,
+            size: 14,
+            font,
+          });
+          y -= 30;
+
+          const pdfBytes = await pdfDoc.save();
+          const blob = new Blob([pdfBytes], { type: "application/pdf" });
+          const url = URL.createObjectURL(blob);
+
+          downloadBtn.style.display = "inline-block";
+          downloadBtn.href = url;
+          downloadBtn.download = `certificat_${formData.name}.pdf`;
+          downloadBtn.classList.add("btn-download");
+          downloadBtn.textContent = "Télécharger mon certificat";
+
+          setTimeout(() => {
+            alert("Votre certificat est prêt au téléchargement !");
+          }, 15000);
         }
 
-        // =========================
-        // Mode papier → redirection
-        // =========================
         if (mode === "paper") window.location.href = "documents.html";
 
         form.reset();
         updateFormDisplay();
       } catch (err) {
         console.error(err);
-        // On ignore le backend pour PDF côté client → pas d’alerte serveur
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "Rejoindre";
@@ -222,7 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alertBox.hidden = true;
 
       try {
-        // Envoi au backend (ou service d’email)
         const res = await fetch(`${BASE_URL}/api/contact`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },

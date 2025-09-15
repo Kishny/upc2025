@@ -7,6 +7,7 @@ const I18N = (function () {
 
   // Charger le fichier JSON de traduction
   async function load(lang) {
+    if (!I18N_ENABLED) return; // <-- Désactiver i18n si flag false
     try {
       const res = await fetch(`assets/i18n/${lang}.json`);
       translations = await res.json();
@@ -20,6 +21,7 @@ const I18N = (function () {
 
   // Appliquer les traductions sur les éléments data-i18n
   function applyTranslations() {
+    if (!I18N_ENABLED) return; // <-- Désactiver i18n si flag false
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (!key) return;
@@ -41,6 +43,7 @@ const I18N = (function () {
 
   // Basculer la langue
   function toggle() {
+    if (!I18N_ENABLED) return;
     const newLang = currentLang === "fr" ? "en" : "fr";
     load(newLang);
   }
@@ -64,20 +67,31 @@ window.I18NReady = function (callback) {
 };
 
 /* =========================
+   FLAG GLOBAL — ACTIVER / DESACTIVER I18N
+========================= */
+const I18N_ENABLED = false; // <-- mettre à false pour désactiver toutes les traductions
+
+/* =========================
    INITIALISATION
    ========================= */
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("I18N initialisation avant click FR/EN :", I18N);
-  I18N.load(I18N.currentLang);
+  if (I18N_ENABLED) {
+    console.log("I18N initialisation avant click FR/EN :", I18N);
+    I18N.load(I18N.currentLang);
 
-  const langToggleBtn = document.getElementById("langToggle");
-  if (langToggleBtn) {
-    langToggleBtn.addEventListener("click", () => {
-      console.log(
-        "FR/EN clicked. Current lang before toggle:",
-        I18N.currentLang
-      );
-      I18N.toggle();
-    });
+    const langToggleBtn = document.getElementById("langToggle");
+    if (langToggleBtn) {
+      langToggleBtn.addEventListener("click", () => {
+        console.log(
+          "FR/EN clicked. Current lang before toggle:",
+          I18N.currentLang
+        );
+        I18N.toggle();
+      });
+    }
+  } else {
+    console.log(
+      "I18N désactivé — toutes les pages utilisent le texte original."
+    );
   }
 });
