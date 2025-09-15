@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'input[name="inscription_mode"]:checked'
       ).value;
 
+      // Organisation
       if (memberType === "organization") {
         orgFields.style.display = "flex";
         document.querySelector('input[name="org_name"]').required = true;
@@ -60,8 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
         form.classList.remove("form-org");
       }
 
-      if (mode === "online") downloadBtn.style.display = "none";
-      else downloadBtn.style.display = "inline-block";
+      // Mode inscription
+      if (mode === "online") {
+        downloadBtn.textContent = "Télécharger mon certificat";
+        downloadBtn.href = "#";
+        downloadBtn.onclick = null;
+        downloadBtn.style.display = "inline-block";
+      } else {
+        downloadBtn.textContent = "Télécharger la fiche d'adhésion";
+        downloadBtn.href = "documents.html";
+        downloadBtn.target = "_self";
+        downloadBtn.style.display = "inline-block";
+      }
     }
 
     memberTypeRadios.forEach((r) =>
@@ -69,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     modeRadios.forEach((r) => r.addEventListener("change", updateFormDisplay));
 
-    // Soumission adhésion
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -95,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.textContent = "Envoi en cours...";
 
       try {
-        // PDF côté frontend
         if (mode === "online" && window.PDFLib) {
           const { PDFDocument, rgb, StandardFonts } = PDFLib;
           const pdfDoc = await PDFDocument.create();
@@ -112,7 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
             height,
             color: rgb(0.93, 0.96, 0.94),
           });
-
           page.drawText("CERTIFICAT D'ADHÉSION", {
             x: 50,
             y: height - 200,
@@ -215,9 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         });
-
         const result = await res.json();
-
         if (result.ok) {
           alertBox.hidden = false;
           alertBox.textContent = "Merci ! Votre message a été envoyé.";
